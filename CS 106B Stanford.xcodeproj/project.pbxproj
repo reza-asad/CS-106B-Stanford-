@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C9B660F420E6A9A700F2FA77 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9B660F320E6A9A700F2FA77 /* main.cpp */; };
+		C9B660FD20E6B12600F2FA77 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9B660FB20E6B12600F2FA77 /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +24,7 @@
 
 /* Begin PBXFileReference section */
 		C9B660F020E6A9A700F2FA77 /* CS 106B Stanford */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "CS 106B Stanford"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C9B660F320E6A9A700F2FA77 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		C9B660FB20E6B12600F2FA77 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +57,17 @@
 		C9B660F220E6A9A700F2FA77 /* CS 106B Stanford */ = {
 			isa = PBXGroup;
 			children = (
-				C9B660F320E6A9A700F2FA77 /* main.cpp */,
+				C9B660FA20E6B0FD00F2FA77 /* Assignment1 */,
 			);
 			path = "CS 106B Stanford";
+			sourceTree = "<group>";
+		};
+		C9B660FA20E6B0FD00F2FA77 /* Assignment1 */ = {
+			isa = PBXGroup;
+			children = (
+				C9B660FB20E6B12600F2FA77 /* main.cpp */,
+			);
+			path = Assignment1;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,7 +126,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9B660F420E6A9A700F2FA77 /* main.cpp in Sources */,
+				C9B660FD20E6B12600F2FA77 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
