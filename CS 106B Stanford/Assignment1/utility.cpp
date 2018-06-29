@@ -10,6 +10,13 @@
 #include "utility.hpp"
 #include "vector"
 
+// Censoring a string given anoter string
+// Input:
+//      string text: A string to be censored
+//      string remove: A string containing characters that we need
+//                     to remove from text.
+// return:
+//      string result: The censored string.
 string CensorString1(string text, string remove) {
     string result = "";
     for (int i=0; i<text.length(); ++i) {
@@ -20,6 +27,12 @@ string CensorString1(string text, string remove) {
     return result;
 }
 
+// Testing string censorship
+// Input:
+//      vector myAnswers: A vector containing the answers I get from my functions.
+//      vector trueAnswers: A vectore containing the true answers to my examples.
+// return:
+//      A boolean indicating if all tests have passed.
 bool TestCensorString(vector<string> myAnswers, vector<string> trueAnswers) {
     if (myAnswers.size() != trueAnswers.size()) {
         cout << "Vectors for My Solution and the True Solution Must be of Same Size" << endl;
