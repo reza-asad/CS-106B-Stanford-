@@ -15,48 +15,30 @@ using namespace std;
 
 int main() {
     // Testing CensorString1
+    vector<string> sentences = {"Stanford University", "Llamas like to laugh",
+        "Coding during exams", "last test"};
+    vector<string> remvoes = {"nt", "la", "", "b"};
+    vector<string> trueAnswers = {"Saford Uiversiy", "Lms ike to ugh",
+        "Coding during exams", "last test"};
     vector<string> myAnswers;
-    vector<string> trueAnswers;
     
     string myAnswer="";
-    myAnswer = CensorString1("Stanford University", "nt");
-    myAnswers.push_back(myAnswer);
-    trueAnswers.push_back("Saford Uiversiy");
-    
-    myAnswer = CensorString1("Llamas like to laugh", "la");
-    myAnswers.push_back(myAnswer);
-    trueAnswers.push_back("Lms ike to ugh");
-
-    myAnswer = CensorString1("Coding during exams", "");
-    myAnswers.push_back(myAnswer);
-    trueAnswers.push_back("Coding during exams");
-
-    myAnswer = CensorString1("last test", "b");
-    myAnswers.push_back(myAnswer);
-    trueAnswers.push_back("last test");
-
+    for (int i=0; i<sentences.size(); ++i) {
+        myAnswer = CensorString1(sentences[i], remvoes[i]);
+        myAnswers.push_back(myAnswer);
+    }
     TestCensorString(myAnswers, trueAnswers);
     
     // Testing CensorString2
-    string test_str = "Stanford University";
-    CensorString2(test_str, "nt");
-    myAnswers.push_back(test_str);
-    trueAnswers.push_back("Saford Uiversiy");
-
-    test_str = "Llamas like to laugh";
-    CensorString2(test_str, "la");
-    myAnswers.push_back(test_str);
-    trueAnswers.push_back("Lms ike to ugh");
-
-    test_str = "Coding during exams";
-    CensorString2(test_str, "");
-    myAnswers.push_back(test_str);
-    trueAnswers.push_back("Coding during exams");
-
-    test_str = "last test";
-    CensorString2(test_str, "b");
-    myAnswers.push_back(test_str);
-    trueAnswers.push_back("last test");
-
+    // clear the previous answers
+    myAnswers.clear();
+    string test_str;
+    for (int i=0; i<sentences.size(); ++i) {
+        test_str = sentences[i];
+        CensorString2(test_str, remvoes[i]);
+        myAnswers.push_back(test_str);
+    }
+    TestCensorString(myAnswers, trueAnswers);
+    
     return 0;
 }
