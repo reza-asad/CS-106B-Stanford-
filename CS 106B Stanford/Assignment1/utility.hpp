@@ -26,7 +26,9 @@ struct GradeStats {
     double maxScore;
     double avgScore;
 };
-
 GradeStats* ComputeGradesStats(string fileName);
+
+// Question 3
+void CountLetters(string fileName);
 
 #endif /* utility_hpp */

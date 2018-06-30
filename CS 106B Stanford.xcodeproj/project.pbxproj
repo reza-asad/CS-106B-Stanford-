@@ -29,6 +29,7 @@
 		C9B660FE20E6B43400F2FA77 /* utility.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = utility.cpp; sourceTree = "<group>"; };
 		C9B660FF20E6B43400F2FA77 /* utility.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = utility.hpp; sourceTree = "<group>"; };
 		C9B6610120E71AFC00F2FA77 /* grades.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = grades.txt; sourceTree = "<group>"; };
+		C9B6610220E820CD00F2FA77 /* letters.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = letters.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +74,7 @@
 				C9B660FE20E6B43400F2FA77 /* utility.cpp */,
 				C9B660FF20E6B43400F2FA77 /* utility.hpp */,
 				C9B6610120E71AFC00F2FA77 /* grades.txt */,
+				C9B6610220E820CD00F2FA77 /* letters.txt */,
 			);
 			path = Assignment1;
 			sourceTree = "<group>";

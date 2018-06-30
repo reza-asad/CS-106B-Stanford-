@@ -46,5 +46,8 @@ int main() {
     cout << "The min, max and average are: " << stats->minScore << ", "
     << stats->maxScore << ", " << stats->avgScore << endl;
     
+    // Cound the letters in the letters file
+    CountLetters("letters.txt");
+    
     return 0;
 }

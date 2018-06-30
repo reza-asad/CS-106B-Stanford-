@@ -118,3 +118,30 @@ GradeStats * ComputeGradesStats(string fileName) {
         cout << "The file was empty" <<endl;
     return stats;
 }
+
+
+void CountLetters(string fileName) {
+    ifstream ifile;
+    ifile.open(fileName);
+    if (ifile.is_open()) {
+        string line;
+        vector<int> alphabetCount(26);
+        while(getline(ifile, line)) {
+            int pos = 0;
+            for (int i=0; i<line.length(); ++i) {
+                if (isalpha(line[i])) {
+                    pos = tolower(line[i], locale()) - 'a';
+                    alphabetCount[pos] += 1;
+                }
+            }
+        }
+        // Print the number of times each alphabet letter appears
+        string alphabets = "abcdefghijklmnopqrstuvwxyz";
+        for (int i=0; i<alphabets.size(); ++i) {
+            cout << alphabets[i] << ": " << alphabetCount[i] << endl;
+        }
+    } else {
+        ifile.clear();
+        cerr << "Could not open the file: " << fileName << endl;
+    }
+}
