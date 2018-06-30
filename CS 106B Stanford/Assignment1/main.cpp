@@ -37,7 +37,26 @@ int main() {
 
     TestCensorString(myAnswers, trueAnswers);
     
-    
-    
+    // Testing CensorString2
+    string test_str = "Stanford University";
+    CensorString2(test_str, "nt");
+    myAnswers.push_back(test_str);
+    trueAnswers.push_back("Saford Uiversiy");
+
+    test_str = "Llamas like to laugh";
+    CensorString2(test_str, "la");
+    myAnswers.push_back(test_str);
+    trueAnswers.push_back("Lms ike to ugh");
+
+    test_str = "Coding during exams";
+    CensorString2(test_str, "");
+    myAnswers.push_back(test_str);
+    trueAnswers.push_back("Coding during exams");
+
+    test_str = "last test";
+    CensorString2(test_str, "b");
+    myAnswers.push_back(test_str);
+    trueAnswers.push_back("last test");
+
     return 0;
 }

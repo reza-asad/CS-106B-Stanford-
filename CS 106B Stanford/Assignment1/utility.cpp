@@ -27,6 +27,15 @@ string CensorString1(string text, string remove) {
     return result;
 }
 
+void CensorString2(string & text, string remove) {
+    for (int i=0; i<text.length(); ++i) {
+        if (remove.find(text[i]) != string::npos) {
+            text.erase(i, 1);
+            i--;
+        }
+    }
+}
+
 // Testing string censorship
 // Input:
 //      vector myAnswers: A vector containing the answers I get from my functions.

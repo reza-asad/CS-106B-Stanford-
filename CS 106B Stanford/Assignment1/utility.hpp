@@ -16,7 +16,7 @@
 using namespace std;
 
 string CensorString1(string text, string remove);
-string CensorString2(string & text, string remove);
+void CensorString2(string & text, string remove);
 bool TestCensorString(vector<string> texts, vector<string> answers);
 
 #endif /* utility_hpp */
