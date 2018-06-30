@@ -15,8 +15,18 @@
 
 using namespace std;
 
+// Question 1
 string CensorString1(string text, string remove);
 void CensorString2(string & text, string remove);
 bool TestCensorString(vector<string> texts, vector<string> answers);
+
+// Question 2
+struct GradeStats {
+    double minScore;
+    double maxScore;
+    double avgScore;
+};
+
+GradeStats* ComputeGradesStats(string fileName);
 
 #endif /* utility_hpp */

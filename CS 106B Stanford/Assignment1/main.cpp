@@ -40,5 +40,11 @@ int main() {
     }
     TestCensorString(myAnswers, trueAnswers);
     
+    // Compute the stats on the grades file
+    GradeStats * stats;
+    stats = ComputeGradesStats("grades.txt");
+    cout << "The min, max and average are: " << stats->minScore << ", "
+    << stats->maxScore << ", " << stats->avgScore << endl;
+    
     return 0;
 }

@@ -6,12 +6,13 @@
 //  Copyright © 2018 Reza Asad. All rights reserved.
 //
 
-#include "iostream"
-#include "utility.hpp"
-#include "vector"
+#include <iostream>
+#include <vector>
+#include <fstream>
 
+#include "utility.hpp"
 // Censoring a string given anoter string
-// Input:
+// input:
 //      string text: A string to be censored
 //      string remove: A string containing characters that we need
 //                     to remove from text.
@@ -27,6 +28,11 @@ string CensorString1(string text, string remove) {
     return result;
 }
 
+// Censoring a string given anoter string in place
+// input:
+//      string text: A string to be censored
+//      string remove: A string containing characters that we need
+//                     to remove from text.
 void CensorString2(string & text, string remove) {
     for (int i=0; i<text.length(); ++i) {
         if (remove.find(text[i]) != string::npos) {
@@ -37,7 +43,7 @@ void CensorString2(string & text, string remove) {
 }
 
 // Testing string censorship
-// Input:
+// input:
 //      vector myAnswers: A vector containing the answers I get from my functions.
 //      vector trueAnswers: A vectore containing the true answers to my examples.
 // return:
@@ -56,4 +62,59 @@ bool TestCensorString(vector<string> myAnswers, vector<string> trueAnswers) {
         cout << "All the test have passed!" << endl;
         return true;
     }
+}
+
+// This reads the grades in a file line by line.
+// Checks the validity of the grades (0 <= grade <= 100).
+// Computes the min, max and average grade during one
+// pass of the file.
+//
+// Input:
+//      string fileName: The name of the file containing the grades.
+// return:
+//      GradeStats* stats: A pointer to the structure that contains
+//      the computed statistics.
+GradeStats * ComputeGradesStats(string fileName) {
+    // Open the file
+    ifstream ifile;
+    GradeStats * stats = new GradeStats;
+    ifile.open(fileName);
+    int count = 0;
+    if (ifile.is_open()) {
+        string sgrade;
+        double minVal = 0;
+        double maxVal = 0;
+        double sumVal = 0;
+        int igrade = 0;
+
+        // Compute the min, max and avg during one pass of the file.
+        while (getline(ifile, sgrade)) {
+            igrade = stoi(sgrade);
+            // First check the sanity of the grades
+            if (igrade > 100 or igrade < 0) {
+                cerr << "The file contains invalid grades" << endl;
+            }
+            if (igrade < minVal) {
+                minVal = igrade;
+            } else if (igrade > maxVal) {
+                maxVal = igrade;
+            }
+            sumVal += igrade;
+            count += 1;
+        }
+        double avgVal = sumVal/count;
+        
+        // Populate the struct
+        stats->minScore = minVal;
+        stats->maxScore = maxVal;
+        stats->avgScore = avgVal;
+
+    } else {
+        ifile.clear();
+        cerr << "Could not open the file: " << fileName << endl;
+    }
+    // Notify the clinet if the file was empty
+    if (count==0)
+        cout << "The file was empty" <<endl;
+    return stats;
 }
