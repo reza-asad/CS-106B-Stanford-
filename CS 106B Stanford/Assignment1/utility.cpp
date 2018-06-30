@@ -119,7 +119,12 @@ GradeStats * ComputeGradesStats(string fileName) {
     return stats;
 }
 
-
+// This will open a file and prints out the number of time
+// each alphabet letter exists in the file (not case sensitive)
+//
+// input:
+//      string fileName: The file name
+//
 void CountLetters(string fileName) {
     ifstream ifile;
     ifile.open(fileName);
