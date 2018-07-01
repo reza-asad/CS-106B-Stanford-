@@ -61,8 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				C9B6611620E97B4500F2FA77 /* main.cpp */,
-				C9B6611D20E97BA700F2FA77 /* utility.cpp */,
 				C9B6611E20E97BA700F2FA77 /* utility.hpp */,
+				C9B6611D20E97BA700F2FA77 /* utility.cpp */,
 			);
 			path = Assignment2;
 			sourceTree = "<group>";
