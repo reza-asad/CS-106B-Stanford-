@@ -48,6 +48,6 @@ int main() {
     
     // Cound the letters in the letters file
     CountLetters("letters.txt");
-    
+
     return 0;
 }
