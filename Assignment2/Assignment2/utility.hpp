@@ -12,6 +12,8 @@
 #include <stdio.h>
 #include <iostream>
 #include <vector>
+#include <queue>
+#include <stack>
 
 using namespace std;
 
@@ -32,5 +34,12 @@ struct emailMsg {
 //      vector<emailMsg> emails: A vector of emails object.
 void RemoveSpam(vector<emailMsg> & emails);
 
+// Question 2
+
+// This reverses a queue of integers.
+//
+// input:
+//      queue<int> & q: A queue which we reverse it's elements.
+void ReverseQueue(queue<int> & q);
 
 #endif /* utility_hpp */

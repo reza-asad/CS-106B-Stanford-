@@ -26,5 +26,18 @@ int main() {
         }
     }
     cout << "Success, no spam email!!" << endl;
+    
+    // Reverse a queue
+    queue<int> q;
+    q.push(1);
+    q.push(3);
+    q.push(10);
+    ReverseQueue(q);
+    // Print the elements of the queue now
+    while (!q.empty()) {
+        cout << q.front() << endl;
+        q.pop();
+    }
+    
     return 0;
 }

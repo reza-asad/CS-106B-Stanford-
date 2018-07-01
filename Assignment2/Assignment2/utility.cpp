@@ -9,6 +9,8 @@
 #include "utility.hpp"
 #include <iostream>
 #include <vector>
+#include <queue>
+#include <stack>
 
 using namespace std;
 
@@ -22,5 +24,20 @@ void RemoveSpam(vector<emailMsg> & emails) {
             i--;
         }
         i++;
+    }
+}
+
+// Question 2
+void ReverseQueue(queue<int> & q) {
+    stack<int> s;
+    while (!q.empty()) {
+        int e = q.front();
+        q.pop();
+        s.push(e);
+    }
+    while (!s.empty()) {
+        int e = s.top();
+        s.pop();
+        q.push(e);
     }
 }
