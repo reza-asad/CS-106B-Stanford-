@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include "utility.hpp"
+#include <regex>
 
 int main() {
     // Create a vector of eamils first
@@ -38,6 +39,12 @@ int main() {
         cout << q.front() << endl;
         q.pop();
     }
+
+    // Check if html tags are correctly nested in a string
+    string htmlStr = "<html><b><i>CS106 rules!</i></b></html>";
+    bool isNested = IsCorrectlyNested(htmlStr);
+    if (isNested) cout << "The html string is nested correctly."<<endl;
+    else cout<< "The nesting was incorrect."<< endl;
     
     return 0;
 }

@@ -11,6 +11,7 @@
 #include <vector>
 #include <queue>
 #include <stack>
+#include <regex>
 
 using namespace std;
 
@@ -41,3 +42,40 @@ void ReverseQueue(queue<int> & q) {
         q.push(e);
     }
 }
+
+// Question 3
+vector<string> ExtractTags(string htmlStr) {
+    vector<string> tags;
+    regex r("<[^<]*?>");
+    smatch match;
+    while (regex_search(htmlStr, match,r)) {
+        tags.push_back(match[0]);
+        htmlStr = match.suffix();
+    }
+    return tags;
+}
+
+bool TagsMatch(string closingTag, string openingTag) {
+    if ((closingTag.length()-openingTag.length()) != 1) return false;
+    for (int i = 2; i < closingTag.size(); ++i) {
+        if (closingTag[i] != openingTag[i-1]) return false;
+    }
+    return true;
+}
+
+bool IsCorrectlyNested(string htmlStr) {
+    vector<string> tags = ExtractTags(htmlStr);
+    stack<string> sTags;
+    for (int i = 0; i < tags.size(); ++i) {
+        if (tags[i][1] != '/') {
+            sTags.push(tags[i]);
+        } else {
+            string tag = sTags.top();
+            if (!TagsMatch(tags[i], tag)) return false;
+            sTags.pop();
+        }
+    }
+    return sTags.size()==0;
+}
+
+

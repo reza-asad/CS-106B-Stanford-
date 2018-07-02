@@ -42,4 +42,17 @@ void RemoveSpam(vector<emailMsg> & emails);
 //      queue<int> & q: A queue which we reverse it's elements.
 void ReverseQueue(queue<int> & q);
 
+// Question 3
+// This checks if html tags such as <b>, <i> or <html> are matched
+// against a corresponding </b>, </i>, </html>. This assumes the
+// html string is correctly fromed.
+//
+// input:
+//      string htmlStr: A correct string of html.
+//
+// return :
+//      True if the every html opening tag is matched against
+//      a corresponding closing tag.
+bool IsCorrectlyNested(string htmlStr);
+
 #endif /* utility_hpp */
