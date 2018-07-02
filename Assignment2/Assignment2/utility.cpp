@@ -12,6 +12,7 @@
 #include <queue>
 #include <stack>
 #include <regex>
+#include <map>
 
 using namespace std;
 
@@ -78,4 +79,23 @@ bool IsCorrectlyNested(string htmlStr) {
     return sTags.size()==0;
 }
 
-
+char MostFrequentCharacter(ifstream & ifile, int & numOccurrences) {
+    char mostFrequent = ' ';
+    if (ifile.is_open()) {
+        string line;
+        map<char, int> charFrequency;
+        while (getline(ifile, line)) {
+            for (int i = 0; i < line.length(); ++i) {
+                if (line[i] == ' ') continue;
+                charFrequency[line[i]] += 1;
+                if (charFrequency[line[i]] > numOccurrences) {
+                    numOccurrences = charFrequency[line[i]];
+                    mostFrequent = line[i];
+                }
+            }
+        }
+    } else {
+        cerr << "The file is not open. Please open the file first" << endl;
+    }
+    return mostFrequent;
+}

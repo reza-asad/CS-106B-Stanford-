@@ -28,6 +28,7 @@
 		C9B6611620E97B4500F2FA77 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C9B6611D20E97BA700F2FA77 /* utility.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = utility.cpp; sourceTree = "<group>"; };
 		C9B6611E20E97BA700F2FA77 /* utility.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = utility.hpp; sourceTree = "<group>"; };
+		C9B6612020EAAC5000F2FA77 /* characters.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = characters.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +64,7 @@
 				C9B6611620E97B4500F2FA77 /* main.cpp */,
 				C9B6611E20E97BA700F2FA77 /* utility.hpp */,
 				C9B6611D20E97BA700F2FA77 /* utility.cpp */,
+				C9B6612020EAAC5000F2FA77 /* characters.txt */,
 			);
 			path = Assignment2;
 			sourceTree = "<group>";

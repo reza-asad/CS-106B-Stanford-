@@ -8,7 +8,7 @@
 
 #include <iostream>
 #include "utility.hpp"
-#include <regex>
+#include <fstream>
 
 int main() {
     // Create a vector of eamils first
@@ -45,6 +45,14 @@ int main() {
     bool isNested = IsCorrectlyNested(htmlStr);
     if (isNested) cout << "The html string is nested correctly."<<endl;
     else cout<< "The nesting was incorrect."<< endl;
+    
+    // Find the most frequent character in a file.
+    char mostFrequent;
+    int numOccurrences = 0;
+    ifstream ifile("characters.txt");
+    mostFrequent = MostFrequentCharacter(ifile, numOccurrences);
+    cout << "The most frequent character is: " << mostFrequent <<
+    " with frequency: " << numOccurrences << endl;
     
     return 0;
 }

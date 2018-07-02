@@ -14,6 +14,7 @@
 #include <vector>
 #include <queue>
 #include <stack>
+#include <fstream>
 
 using namespace std;
 
@@ -54,5 +55,17 @@ void ReverseQueue(queue<int> & q);
 //      True if the every html opening tag is matched against
 //      a corresponding closing tag.
 bool IsCorrectlyNested(string htmlStr);
+
+// This iterates through a file and finds the character with most
+// frequency except white space.
+//
+// input:
+//      ifstream & if: Input file that the function is going to read.
+//      int & numOccurrences: The number of times that the most frequent
+//                            character appears. This must be initialized
+//                            zero.
+// return:
+//      The most frequent character.
+char MostFrequentCharacter(ifstream & ifile, int & numOccurrences);
 
 #endif /* utility_hpp */
