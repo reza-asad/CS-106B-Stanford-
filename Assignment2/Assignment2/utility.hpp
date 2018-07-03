@@ -68,4 +68,17 @@ bool IsCorrectlyNested(string htmlStr);
 //      The most frequent character.
 char MostFrequentCharacter(ifstream & ifile, int & numOccurrences);
 
+// This takes a grid of boolean indicating treasure locations. The
+// function computes the number of treasures in a neighbourhood. The
+// neighbourhood is defined as the cell itself and it's eight adjacent
+// neibours. Note that this assumes the input is rectangular.
+//
+// input:
+//      vector<vector<bool>> & treasureLocation: A rectangle of booleans
+//      that indicates the existence of treasure at each cell.
+// return:
+//      A rectangleular vector<vector<int>> that has the count of treasures
+//      at a location and it's eight adjacent neighbours.
+int ** MakeGridOfCounts(bool ** treasureLocation, int numRows, int numCols);
+
 #endif /* utility_hpp */

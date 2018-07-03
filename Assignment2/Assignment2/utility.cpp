@@ -99,3 +99,33 @@ char MostFrequentCharacter(ifstream & ifile, int & numOccurrences) {
     }
     return mostFrequent;
 }
+
+int ** MakeGridOfCounts(bool ** treasureLocation, int numRows, int numCols) {
+    int ** treasureCounts;
+    
+    // Initialize the treasureCounts
+    treasureCounts = new int *[numRows];
+    for (int r = 0; r < numRows; ++r) {
+        treasureCounts[r] = new int[numCols];
+        for (int c = 0; c < numCols; ++c) {
+            treasureCounts[r][c] = 0;
+        }
+    }
+
+    // Count the treasures
+    for (int r = 0; r < numRows; ++r) {
+        for (int c = 0; c < numCols; ++c) {
+            int rowIdx[] = {r-1, r, r+1};
+            int colIdx[] = {c-1, c, c+1};
+            for (int i=0; i<3; ++i) {
+                for (int j=0; j<3; ++j) {
+                    if (rowIdx[i] > -1 and rowIdx[i] < numRows and colIdx[j] > -1 and colIdx[j] < numCols) {
+                        treasureCounts[r][c] += treasureLocation[rowIdx[i]][colIdx[j]];
+                    }
+                }
+            }
+        }
+    }
+    return treasureCounts;
+}
+

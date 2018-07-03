@@ -54,5 +54,31 @@ int main() {
     cout << "The most frequent character is: " << mostFrequent <<
     " with frequency: " << numOccurrences << endl;
     
+    // Count the number of treasures.
+    const int numRows = 6;
+    const int numCols = 6;
+    bool treasureLocation[numRows][numCols] = {
+        {true, false, false, false, false, true},
+        {false, false, false, false, false, true},
+        {true, true, false, true, false, true},
+        {true, false, false, false, false, false},
+        {false, false, true, false, false, false},
+        {false, false, false, false, false, false}
+    };
+
+    bool ** ptrTreasureLocation;
+    ptrTreasureLocation = new bool *[numRows];
+    for (int r = 0 ; r < numRows; ++r) {
+        ptrTreasureLocation[r] = treasureLocation[r];
+    }
+    int ** gridCounts;
+    gridCounts = MakeGridOfCounts(ptrTreasureLocation, numRows, numCols);
+    for (int r = 0; r < numRows; ++r) {
+        for (int c = 0; c < numCols; ++c) {
+            cout << gridCounts[r][c] << ',';
+            if (c == (numCols-1)) cout << endl;
+        }
+    }
+    
     return 0;
 }
