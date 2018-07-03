@@ -93,15 +93,23 @@ void printGrid(Grid g, int numRows, int numCols) {
 // neibours. Note that this assumes the input is rectangular.
 //
 // input:
-//      vector<vector<bool>> & treasureLocation: A rectangle of booleans
+//      bool ** treasureLocation: A 2d array of booleans
 //      that indicates the existence of treasure at each cell.
 //      int nuRows: The number of rows.
 //      int numCols: The number of columns.
 // return:
-//      A rectangleular vector<vector<int>> that has the count of treasures
+//      A 2d array that has the count of treasures
 //      at a location and it's eight adjacent neighbours.
 int ** MakeGridOfCounts(bool ** treasureLocation, int numRows, int numCols);
 
-vector<vector<int>> MakeGridOfCounts(vector<vector<bool>> & treasureLocation);
+// The same function as above except the input and output are different.
+//
+// input:
+//      vector<vector<bool>> & treasureLocation: A rectangle of booleans
+//      that indicates the existence of treasure at each cell.
+// return:
+//      A pointer to a vector<vector<int>> that has the count of treasures
+//      at a location and it's eight adjacent neighbours.
+vector<vector<int>> * MakeGridOfCounts(vector<vector<bool>> & treasureLocation);
 
 #endif /* utility_hpp */

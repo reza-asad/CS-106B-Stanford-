@@ -67,7 +67,7 @@ int main() {
     };
 
     bool ** ptrTreasureLocation;
-    ptrTreasureLocation = new bool *[numRows];
+    ptrTreasureLocation = new bool * [numRows];
     for (int r = 0 ; r < numRows; ++r) {
         ptrTreasureLocation[r] = treasureLocation[r];
     }
@@ -87,9 +87,10 @@ int main() {
         treasureLocation2.push_back(temp);
     }
     
-    vector<vector<int>> gridCounts2;
+    vector<vector<int>> * gridCounts2;
     gridCounts2 = MakeGridOfCounts(treasureLocation2);
-    printGrid(gridCounts2, numRows, numCols);
+    printGrid(*gridCounts2, numRows, numCols);
+    delete gridCounts2;
     
     return 0;
 }
