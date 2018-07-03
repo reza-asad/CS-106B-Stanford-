@@ -73,12 +73,23 @@ int main() {
     }
     int ** gridCounts;
     gridCounts = MakeGridOfCounts(ptrTreasureLocation, numRows, numCols);
+    printGrid(gridCounts, numRows, numCols);
+    
+    delete ptrTreasureLocation;
+    delete gridCounts;
+
+    vector<vector<bool>> treasureLocation2;
     for (int r = 0; r < numRows; ++r) {
+        vector<bool> temp;
         for (int c = 0; c < numCols; ++c) {
-            cout << gridCounts[r][c] << ',';
-            if (c == (numCols-1)) cout << endl;
+            temp.push_back(treasureLocation[r][c]);
         }
+        treasureLocation2.push_back(temp);
     }
+    
+    vector<vector<int>> gridCounts2;
+    gridCounts2 = MakeGridOfCounts(treasureLocation2);
+    printGrid(gridCounts2, numRows, numCols);
     
     return 0;
 }

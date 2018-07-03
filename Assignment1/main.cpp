@@ -45,6 +45,7 @@ int main() {
     stats = ComputeGradesStats("grades.txt");
     cout << "The min, max and average are: " << stats->minScore << ", "
     << stats->maxScore << ", " << stats->avgScore << endl;
+    delete stats;
     
     // Cound the letters in the letters file
     CountLetters("letters.txt");

@@ -68,6 +68,25 @@ bool IsCorrectlyNested(string htmlStr);
 //      The most frequent character.
 char MostFrequentCharacter(ifstream & ifile, int & numOccurrences);
 
+// This prints the contents of a Grid object.
+//
+// input:
+//      Grid g: A Grid object. For instnace, a vector of vector
+//      or an array of array.
+//      int numRows: Number of rows in the grid.
+//      int numCols: Number of columns in the grid.
+//
+template<class Grid>
+void printGrid(Grid g, int numRows, int numCols) {
+    for (int r = 0; r < numRows; ++r) {
+        for (int c = 0; c < numCols; ++c) {
+            cout << g[r][c] << ',';
+            if (c == (numCols-1)) cout << endl;
+        }
+    }
+    cout<<endl;
+}
+
 // This takes a grid of boolean indicating treasure locations. The
 // function computes the number of treasures in a neighbourhood. The
 // neighbourhood is defined as the cell itself and it's eight adjacent
@@ -76,9 +95,13 @@ char MostFrequentCharacter(ifstream & ifile, int & numOccurrences);
 // input:
 //      vector<vector<bool>> & treasureLocation: A rectangle of booleans
 //      that indicates the existence of treasure at each cell.
+//      int nuRows: The number of rows.
+//      int numCols: The number of columns.
 // return:
 //      A rectangleular vector<vector<int>> that has the count of treasures
 //      at a location and it's eight adjacent neighbours.
 int ** MakeGridOfCounts(bool ** treasureLocation, int numRows, int numCols);
+
+vector<vector<int>> MakeGridOfCounts(vector<vector<bool>> & treasureLocation);
 
 #endif /* utility_hpp */

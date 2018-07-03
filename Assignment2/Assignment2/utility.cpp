@@ -129,3 +129,32 @@ int ** MakeGridOfCounts(bool ** treasureLocation, int numRows, int numCols) {
     return treasureCounts;
 }
 
+vector<vector<int>> MakeGridOfCounts(vector<vector<bool>> & treasureLocation) {
+    unsigned long numRows = treasureLocation.size();
+    unsigned long numCols = treasureLocation[0].size();
+    vector<vector<int>> treasureCounts;
+    
+    // Initialize the treasureCounts
+    for (int r = 0; r < numRows; ++r) {
+        vector<int> temp;
+        for (int c = 0; c < numCols; ++c) {
+            temp.push_back(0);
+        }
+        treasureCounts.push_back(temp);
+    }
+    // Count the treasures
+    for (int r = 0; r < numRows; ++r) {
+        for (int c = 0; c < numCols; ++c) {
+            int rowIdx[] = {r-1, r, r+1};
+            int colIdx[] = {c-1, c, c+1};
+            for (int i=0; i<3; ++i) {
+                for (int j=0; j<3; ++j) {
+                    if (rowIdx[i] > -1 and rowIdx[i] < numRows and colIdx[j] > -1 and colIdx[j] < numCols) {
+                        treasureCounts[r][c] += treasureLocation[rowIdx[i]][colIdx[j]];
+                    }
+                }
+            }
+        }
+    }
+    return treasureCounts;
+}
