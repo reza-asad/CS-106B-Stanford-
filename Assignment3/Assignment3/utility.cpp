@@ -7,3 +7,16 @@
 //
 
 #include "utility.hpp"
+
+
+bool operator < (const entryT & lhs, const entryT & rhs) {
+    if (lhs.lastName == rhs.lastName) return lhs.firstName < rhs.firstName;
+    else return lhs.lastName == rhs.lastName;
+}
+
+void addContact(vector<entryT> & newContacts, set<entryT> & contacts) {
+    for (int i = 0; i < newContacts.size(); ++i) {
+        contacts.insert(newContacts[i]);
+    }
+}
+
