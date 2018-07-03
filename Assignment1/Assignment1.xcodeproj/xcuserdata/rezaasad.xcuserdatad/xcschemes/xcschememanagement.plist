@@ -4,8 +4,15 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>CS 106B Stanford.xcscheme</key>
+		<key>Assignment1.xcscheme</key>
 		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>CS 106B Stanford.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
