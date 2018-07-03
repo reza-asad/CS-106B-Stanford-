@@ -9,9 +9,22 @@
 #include "utility.hpp"
 
 
+string ToLower(string s) {
+    string result;
+    for (int i = 0; i < s.size(); ++i) {
+        result += tolower(s[i], locale());
+    }
+    return result; 
+}
+
 bool operator < (const entryT & lhs, const entryT & rhs) {
-    if (lhs.lastName == rhs.lastName) return lhs.firstName < rhs.firstName;
-    else return lhs.lastName == rhs.lastName;
+    if (ToLower(lhs.lastName) == ToLower(rhs.lastName)) return ToLower(lhs.firstName) < ToLower(rhs.firstName);
+    else return ToLower(lhs.lastName) < ToLower(rhs.lastName);
+}
+
+bool operator == (const entryT & lhs, const entryT & rhs) {
+    if (ToLower(lhs.lastName) == ToLower(rhs.lastName)) return ToLower(lhs.firstName) == ToLower(rhs.firstName);
+    return false;
 }
 
 void addContact(vector<entryT> & newContacts, set<entryT> & contacts) {
