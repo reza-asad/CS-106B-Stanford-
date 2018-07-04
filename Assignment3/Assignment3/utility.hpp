@@ -108,6 +108,13 @@ void ReverseString(string & str, unsigned long beg, unsigned long end);
 // Super easy
 
 // Question 7
+// This tell us if a target is measurable given a number of weights.
+//
+// input:
+//      int target: The target weight.
+//      vector<int> & weights: A vector containing the measuring weights.
+// return:
+//      Is the target measurable.
 bool IsMeasurable(int target, vector<int> & weights);
 
 
