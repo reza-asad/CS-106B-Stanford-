@@ -33,3 +33,16 @@ void addContact(vector<entryT> & newContacts, set<entryT> & contacts) {
     }
 }
 
+void LoadCityMap(vector<city> & cities, map<string, string> & cityMap) {
+    for (int i = 0; i < cities.size(); ++i) {
+        string coordinates = to_string(cities[i].coordinates.x) + '-' +to_string(cities[i].coordinates.y);
+        cityMap[coordinates] = cities[i].name;
+    }
+}
+
+string FindCity(pointT & pCoordinates, map<string, string> & cityMap) {
+    string coordinates = to_string(pCoordinates.x) + '-' +to_string(pCoordinates.y);
+    return cityMap[coordinates];
+}
+
+

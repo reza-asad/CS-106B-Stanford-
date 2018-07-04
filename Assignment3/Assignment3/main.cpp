@@ -24,5 +24,19 @@ int main() {
     entryT Reza = {"reza", "Asad", "333-333-333"};
     if (me == Reza) cout << me.firstName << "=" << Reza.firstName << endl;
     
+    // Locate a city based on it's coordinates.
+    map<string, string> cityMap;
+    city sf = {"SF", {1,0}};
+    city nyc = {"NYC", {1,1}};
+    city sj = {"SJ", {0,1}};
+    city bos = {"BOS", {0,0}};
+    vector<city> cities = {sf, nyc, sj, bos};
+    // Load the map first
+    LoadCityMap(cities, cityMap);
+    // Retrieve city based on coordinate now
+    for (int i = 0; i < cities.size(); ++i) {
+        cout << FindCity(cities[i].coordinates, cityMap) << endl;
+    }
+
     return 0;
 }

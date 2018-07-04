@@ -12,6 +12,7 @@
 #include <iostream>
 #include <set>
 #include <vector>
+#include <map>
 
 using namespace std;
 
@@ -53,5 +54,18 @@ bool operator < (const entryT & lhs, const entryT & rhs);
 //      set<entryT> & contacts: Set of existing contacts.
 void addContact(vector<entryT> & newContacts, set<entryT> & contacts);
 
+
+// Question 2
+struct pointT {
+    int x, y;
+};
+
+struct city {
+    string name;
+    pointT coordinates;
+};
+
+void LoadCityMap(vector<city> & cities, map<string, string> & cityMap);
+string FindCity(pointT & pCoordinates, map<string, string> & cityMap);
 
 #endif /* utility_hpp */
