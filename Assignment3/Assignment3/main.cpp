@@ -38,5 +38,11 @@ int main() {
         cout << FindCity(cities[i].coordinates, cityMap) << endl;
     }
 
+    // Find number of cannonballs
+    vector<int> heights = {0, 1, 2, 3};
+    for (int i = 0; i < heights.size(); ++i) {
+        cout << "with height " << heights[i] << "There are " << Cannonball(heights[i]) << " Cannonballs" << endl;
+    }
+    
     return 0;
 }

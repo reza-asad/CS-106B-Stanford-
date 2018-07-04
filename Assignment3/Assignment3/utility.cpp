@@ -45,4 +45,8 @@ string FindCity(pointT & pCoordinates, map<string, string> & cityMap) {
     return cityMap[coordinates];
 }
 
+int Cannonball(int height) {
+    if (height == 0) return 0;
+    return height * height + Cannonball(height - 1);
+}
 

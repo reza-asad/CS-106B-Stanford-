@@ -83,4 +83,16 @@ void LoadCityMap(vector<city> & cities, map<string, string> & cityMap);
 //      The name of the city with the input coordinates.
 string FindCity(pointT & pCoordinates, map<string, string> & cityMap);
 
+// Question 3
+// This is easy and similar to Question1
+
+// Question 4
+// This return the number of cannonballs in a pyramid
+//
+// input:
+//      int height: The height of the pyramid
+// return:
+//      The number of cannonballs.
+int Cannonball(int height);
+
 #endif /* utility_hpp */
