@@ -50,3 +50,17 @@ int Cannonball(int height) {
     return height * height + Cannonball(height - 1);
 }
 
+void swap(unsigned long beg, unsigned long end, string & s) {
+    char temp = s[beg];
+    s[beg] = s[end];
+    s[end] = temp;
+}
+
+void ReverseString(string & str, unsigned long beg, unsigned long end) {
+    if (beg > end) return;
+    swap(beg, end, str);
+    ReverseString(str, beg+1, end-1);
+}
+
+
+

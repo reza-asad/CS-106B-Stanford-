@@ -95,4 +95,7 @@ string FindCity(pointT & pCoordinates, map<string, string> & cityMap);
 //      The number of cannonballs.
 int Cannonball(int height);
 
+// Qeustion 5
+void ReverseString(string & str, unsigned long beg, unsigned long end);
+
 #endif /* utility_hpp */

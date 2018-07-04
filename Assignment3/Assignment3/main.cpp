@@ -43,6 +43,11 @@ int main() {
     for (int i = 0; i < heights.size(); ++i) {
         cout << "with height " << heights[i] << "There are " << Cannonball(heights[i]) << " Cannonballs" << endl;
     }
-    
+
+    // Reverse a string in place
+    string s = "Mehrdad";
+    ReverseString(s, 0, s.length()-1);
+    cout << "The reversed string is: " << s << endl;
+
     return 0;
 }
