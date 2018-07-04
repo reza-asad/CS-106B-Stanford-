@@ -96,6 +96,12 @@ string FindCity(pointT & pCoordinates, map<string, string> & cityMap);
 int Cannonball(int height);
 
 // Qeustion 5
+// This reverses a string in place.
+//
+// input:
+//      string & str: The string that is going to be reversed.
+//      unsigned long beg: The beg index position for the string.
+//      unsigned long end: The end index position for the string.
 void ReverseString(string & str, unsigned long beg, unsigned long end);
 
 #endif /* utility_hpp */
