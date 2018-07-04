@@ -65,7 +65,22 @@ struct city {
     pointT coordinates;
 };
 
+// This loads the cityMap with coordinates and cities.
+//
+// input:
+//      vector<city> & cities: cities
+//      map<string, string> & cityMap: A map that find a city based on
+//      it's coordinates. The coordinate format is 'x-y'.
 void LoadCityMap(vector<city> & cities, map<string, string> & cityMap);
+
+// This lets the client to find a city based on it coordinate pointT.
+//
+// input:
+//      pointT & pCoordinates: The coordinate of the city.
+//      map<string, string> & cityMap: A map of coordinates (in string)
+//      to city. The coordinate format is 'x-y'
+// return:
+//      The name of the city with the input coordinates.
 string FindCity(pointT & pCoordinates, map<string, string> & cityMap);
 
 #endif /* utility_hpp */
