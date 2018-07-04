@@ -7,7 +7,7 @@
 //
 
 #include "utility.hpp"
-
+#include <numeric>
 
 string ToLower(string s) {
     string result;
@@ -61,6 +61,20 @@ void ReverseString(string & str, unsigned long beg, unsigned long end) {
     swap(beg, end, str);
     ReverseString(str, beg+1, end-1);
 }
+
+bool IsMeasurable(int target, vector<int> & weights) {
+    int sum = accumulate(weights.begin(), weights.end(), 0);
+    if (sum == target) return true;
+    if (sum < target) return false;
+    for (int i = 0; i < weights.size(); ++i) {
+        if (target == weights[i]) return true;
+        vector<int> weightsExceptOne = weights;
+        weightsExceptOne.erase(weightsExceptOne.begin()+i);
+        if (IsMeasurable(target+weights[i], weightsExceptOne) or IsMeasurable(target, weightsExceptOne)) return true;
+    }
+    return false;
+}
+
 
 
 

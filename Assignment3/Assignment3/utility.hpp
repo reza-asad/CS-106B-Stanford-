@@ -104,4 +104,11 @@ int Cannonball(int height);
 //      unsigned long end: The end index position for the string.
 void ReverseString(string & str, unsigned long beg, unsigned long end);
 
+// Question 6
+// Super easy
+
+// Question 7
+bool IsMeasurable(int target, vector<int> & weights);
+
+
 #endif /* utility_hpp */

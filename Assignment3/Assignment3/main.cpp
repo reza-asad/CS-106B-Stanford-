@@ -49,5 +49,14 @@ int main() {
     ReverseString(s, 0, s.length()-1);
     cout << "The reversed string is: " << s << endl;
 
+    // 
+    vector<int> weights = {1, 6, 9, 8, 1, 1, 7};
+    int target = 32;
+    cout << "with weights ";
+    for (int i = 0; i < weights.size(); ++i) {
+        cout << weights[i] << ", ";
+    }
+    cout << "Can we measure " << target << " The answer is " << IsMeasurable(target, weights) << endl;
+    
     return 0;
 }
