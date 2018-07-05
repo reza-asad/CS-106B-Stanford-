@@ -57,6 +57,6 @@ int main() {
         cout << weights[i] << ", ";
     }
     cout << "Can we measure " << target << " The answer is " << IsMeasurable(target, weights) << endl;
-    
+
     return 0;
 }

@@ -117,5 +117,7 @@ void ReverseString(string & str, unsigned long beg, unsigned long end);
 //      Is the target measurable.
 bool IsMeasurable(int target, vector<int> & weights);
 
+// Question 7
+// easy
 
 #endif /* utility_hpp */
