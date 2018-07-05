@@ -20,7 +20,18 @@ struct Cell {
     Cell * next;
 };
 
+// This prints the contents of a linked list
+//
+// input:
+//      Cell * list: The linked list to print.
 void PrintList(Cell * list);
+
+// This converts a vector of ints to a linked list.
+//
+// input:
+//      vector<int> & cells: A vector of ints.
+// return:
+//      A linked list.
 Cell * ConvertToList(vector<int> & cells);
 
 #endif /* utility_hpp */
