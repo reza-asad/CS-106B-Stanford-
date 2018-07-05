@@ -20,6 +20,7 @@ struct Cell {
     Cell * next;
 };
 
+void PrintList(Cell * list);
 Cell * ConvertToList(vector<int> & cells);
 
 #endif /* utility_hpp */

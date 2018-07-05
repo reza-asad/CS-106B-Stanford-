@@ -13,7 +13,7 @@ int main() {
     // Converting a vector of ints to linked list.
     vector<int> cells = {1,2,3,9};
     Cell * list = ConvertToList(cells);
-    
+    PrintList(list);
     
     return 0;
 }
