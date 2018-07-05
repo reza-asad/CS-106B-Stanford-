@@ -34,6 +34,7 @@ void PrintList(Cell * list);
 //      A linked list.
 Cell * ConvertToList(vector<int> & cells);
 
+// Exactly as above except the algorithm is recursive here.
 Cell * ConvertToList2(vector<int> & cells);
 
 #endif /* utility_hpp */
