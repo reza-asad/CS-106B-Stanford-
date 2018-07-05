@@ -25,3 +25,16 @@ Cell * ConvertToList(vector<int> & cells) {
     }
     return list;
 }
+
+Cell * ConvertToList2(vector<int> & cells) {
+    if (cells.size() == 0 ) {
+        Cell * list = new Cell;
+        list = NULL;
+        return list;
+    }
+    Cell * list = new Cell;
+    list -> value = cells[0];
+    vector<int> subCells(cells.begin()+1, cells.end());
+    list -> next = ConvertToList2(subCells);
+    return list;
+}

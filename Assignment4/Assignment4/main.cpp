@@ -14,6 +14,9 @@ int main() {
     vector<int> cells = {1,2,3,9};
     Cell * list = ConvertToList(cells);
     PrintList(list);
-    
+
+    list = ConvertToList2(cells);
+    cout << "Calling the recursive vector to list convertor: " << endl;
+    PrintList(list);
     return 0;
 }

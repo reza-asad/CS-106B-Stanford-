@@ -34,4 +34,6 @@ void PrintList(Cell * list);
 //      A linked list.
 Cell * ConvertToList(vector<int> & cells);
 
+Cell * ConvertToList2(vector<int> & cells);
+
 #endif /* utility_hpp */
