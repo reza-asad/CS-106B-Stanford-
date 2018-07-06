@@ -46,6 +46,11 @@ Cell * ConvertToList2(vector<int> & cells);
 int SumList(Cell *list);
 
 // Question 6
+// This Appends the second list to the first one.
+//
+// input:
+//      Cell * first: first list.
+//      Cell * second: second list.
 void Append(Cell * & first, Cell * & second);
 
 #endif /* utility_hpp */
