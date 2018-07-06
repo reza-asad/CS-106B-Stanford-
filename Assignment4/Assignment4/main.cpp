@@ -22,5 +22,14 @@ int main() {
     // Compute the sum of elements in a linked list.
     cout << "The sume of elements in the list is: " << SumList(list) << endl;
     
+    // Append a second list to a first list
+    vector<int> v1 = {11,8,4,4,6};
+    vector<int> v2 = {1,5,8};
+    Cell * first = ConvertToList(v1);
+    Cell * second = ConvertToList(v2);
+    Append(first, second);
+    cout << "After appending second list to first we have: " << endl;
+    PrintList(first);
+    
     return 0;
 }

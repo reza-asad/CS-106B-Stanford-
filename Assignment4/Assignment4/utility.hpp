@@ -45,4 +45,7 @@ Cell * ConvertToList2(vector<int> & cells);
 //      Sum of the elements in the list.
 int SumList(Cell *list);
 
+// Question 6
+void Append(Cell * & first, Cell * & second);
+
 #endif /* utility_hpp */

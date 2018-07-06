@@ -43,3 +43,19 @@ int SumList(Cell *list) {
     if (list == NULL) return 0;
     return list->value + SumList(list->next);
 }
+
+void Append(Cell * & first, Cell * & second) {
+    if (first == NULL) {
+        first = second;
+        return;
+    }
+    if (first -> next == NULL) {
+        first -> next = second;
+        return;
+    }
+    Append(first -> next, second);
+}
+
+
+
+
