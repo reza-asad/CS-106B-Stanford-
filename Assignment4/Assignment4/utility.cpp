@@ -47,13 +47,11 @@ int SumList(Cell *list) {
 void Append(Cell * & first, Cell * & second) {
     if (first == NULL) {
         first = second;
-        return;
-    }
-    if (first -> next == NULL) {
+    } else if (first -> next == NULL) {
         first -> next = second;
-        return;
-    }
+    } else {
     Append(first -> next, second);
+    }
 }
 
 
