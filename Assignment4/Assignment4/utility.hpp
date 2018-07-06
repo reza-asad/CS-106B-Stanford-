@@ -37,4 +37,12 @@ Cell * ConvertToList(vector<int> & cells);
 // Exactly as above except the algorithm is recursive here.
 Cell * ConvertToList2(vector<int> & cells);
 
+// This sums the elemts of a linked list
+//
+// input:
+//      Cell * list: A list containing int values.
+// return:
+//      Sum of the elements in the list.
+int SumList(Cell *list);
+
 #endif /* utility_hpp */

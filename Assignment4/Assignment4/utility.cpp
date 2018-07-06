@@ -38,3 +38,8 @@ Cell * ConvertToList2(vector<int> & cells) {
     list -> next = ConvertToList2(subCells);
     return list;
 }
+
+int SumList(Cell *list) {
+    if (list == NULL) return 0;
+    return list->value + SumList(list->next);
+}

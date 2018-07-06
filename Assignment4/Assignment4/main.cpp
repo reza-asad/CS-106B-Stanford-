@@ -18,5 +18,9 @@ int main() {
     list = ConvertToList2(cells);
     cout << "Calling the recursive vector to list convertor: " << endl;
     PrintList(list);
+    
+    // Compute the sum of elements in a linked list.
+    cout << "The sume of elements in the list is: " << SumList(list) << endl;
+    
     return 0;
 }
