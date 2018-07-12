@@ -15,6 +15,13 @@ void PrintList(Cell * list) {
     }
 }
 
+void PrintListBackwards(Cell * list) {
+    if (list != NULL) {
+        PrintListBackwards(list -> next);
+        cout << list -> value << endl;
+    }
+}
+
 Cell * ConvertToList(vector<int> & cells) {
     Cell * list = NULL;
     for (int i = 0; i < cells.size(); ++i) {

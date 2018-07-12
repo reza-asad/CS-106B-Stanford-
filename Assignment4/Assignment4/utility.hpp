@@ -26,6 +26,9 @@ struct Cell {
 //      Cell * list: The linked list to print.
 void PrintList(Cell * list);
 
+// This prints a list from the back using recursion.
+void PrintListBackwards(Cell * list);
+
 // This converts a vector of ints to a linked list.
 //
 // input:
@@ -52,5 +55,6 @@ int SumList(Cell *list);
 //      Cell * first: first list.
 //      Cell * second: second list.
 void Append(Cell * & first, Cell * & second);
+
 
 #endif /* utility_hpp */

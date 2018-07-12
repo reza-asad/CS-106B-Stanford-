@@ -31,5 +31,9 @@ int main() {
     cout << "After appending second list to first we have: " << endl;
     PrintList(first);
     
+    // Printing the list now backwards.
+    cout << "Printing the list backwards" << endl;
+    PrintListBackwards(first);
+    
     return 0;
 }
