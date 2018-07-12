@@ -10,7 +10,7 @@
 #include "utility.hpp"
 
 int main() {
-    vector<int> v = {9,10};
+    vector<int> v = {10 ,9, 100, 2, 24, 0, 9};
     MergeSort(v);
     PrintVec(v);
     return 0;

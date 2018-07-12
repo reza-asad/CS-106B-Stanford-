@@ -18,18 +18,25 @@ using namespace std;
 template <typename Type>
 void PrintVec(vector<Type> & v) {
     for (int i = 0; i < v.size(); ++i){
-        cout << v[i] << endl;
+        cout << v[i] << ", ";
     }
+    cout << endl;
 }
 
 template <typename Type>
 void MergeVecs(vector<Type> & v, vector<Type> & left, vector<Type> & right) {
-//    PrintVec(left);
-//    PrintVec(right);
     int left_idx = 0;
     int right_idx = 0;
     for (int current = 0; current < v.size(); ++current) {
-        if ((left_idx < v.size()) and (left[left_idx] < right[right_idx])) {
+        if ((left_idx < left.size()) and (right_idx < right.size())) {
+            if (left[left_idx] < right[right_idx]) {
+                v[current] = left[left_idx];
+                left_idx += 1;
+            } else {
+                v[current] = right[right_idx];
+                right_idx += 1;
+            }
+        } else if (left_idx < left.size()) {
             v[current] = left[left_idx];
             left_idx += 1;
         } else {
