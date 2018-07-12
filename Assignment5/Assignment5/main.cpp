@@ -7,8 +7,11 @@
 //
 
 #include <iostream>
+#include "utility.hpp"
 
 int main() {
-    
+    vector<int> v = {9,10};
+    MergeSort(v);
+    PrintVec(v);
     return 0;
 }
