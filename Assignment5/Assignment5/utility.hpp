@@ -12,6 +12,8 @@
 #include <stdio.h>
 #include <iostream>
 #include <vector>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
@@ -55,6 +57,51 @@ void MergeSort(vector<Type> & v) {
         MergeSort(left);
         MergeSort(right);
         MergeVecs(v, left, right);
+    }
+}
+template <typename Type>
+void swap(vector<Type> & v, unsigned long i, unsigned long j) {
+    Type temp = v[j];
+    v[j] = v[i];
+    v[i] = temp;
+}
+
+template <typename Type>
+unsigned long PivotSort(vector<Type> & v, unsigned long pivot) {
+    unsigned long beg = 0;
+    unsigned long end = v.size() - 1;
+    while (beg < end) {
+        if ((v[beg] > v[pivot]) and (v[end] < v[pivot])) {
+            swap(v, beg, end);
+            beg++;
+            end--;
+        } else if (v[beg] > v[pivot]) {
+            if (end == pivot) {
+                swap(v, beg, pivot);
+                pivot = beg;
+            }
+            end--;
+        } else if (v[end] < v[pivot]) {
+            if (beg == pivot) {
+                swap(v, pivot, end);
+                pivot = end;
+            }
+            beg++;
+        } else {
+            beg++;
+            end--;
+        }
+    }
+    return pivot;
+}
+
+template <typename Type>
+void QuickSort(vector<Type> & v, unsigned long beg, unsigned long end) {
+    if (end > beg) {
+        unsigned long pivot = (rand() % (end+1-beg)) + beg;
+        pivot = PivotSort(v, pivot);
+        QuickSort(v, beg, pivot-1);
+        QuickSort(v, pivot+1, end);
     }
 }
 
