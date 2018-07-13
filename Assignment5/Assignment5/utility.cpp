@@ -26,3 +26,13 @@ vector<int> NaiveMaxSubVector(vector<int> & v) {
     }
     return bestSubVec;
 }
+
+vector<int> SmartMaxSubVector(vector<int> & v) {
+    int mid = (int) (v.size() / 2);
+    vector<int> left(v.begin(), v.begin() + mid);
+    vector<int> right(v.begin() + mid, v.end());
+    vector<int> leftMaxSubVec = SmartMaxSubVector(left);
+    vector<int> rightMaxSubVec = SmartMaxSubVector(right);
+    return BestSubVec(v, leftMaxSubVec, rightMaxSubVec);
+    
+}
