@@ -24,6 +24,10 @@ int main() {
     QuickSort(v2, 0, end);
     PrintVec(v2);
     
+    // Find the subvector with max sum
+    vector<int> v3 = {-1,2,3,-4, 100, -200, 1000};
+    vector<int> maxSubVec = NaiveMaxSubVector(v3);
+    PrintVec(maxSubVec);
     
     return 0;
 }
