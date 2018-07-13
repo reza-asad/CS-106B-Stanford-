@@ -115,6 +115,6 @@ void QuickSort(vector<Type> & v, int beg, int end) {
 //      The subvector with maximum sum.
 vector<int> NaiveMaxSubVector(vector<int> & v);
 
-vector<int> SmartMaxSubVector(vector<int> & v);
+void SmartMaxSubVector(vector<int> & v, int & beg, int & end);
 
 #endif /* utility_hpp */
