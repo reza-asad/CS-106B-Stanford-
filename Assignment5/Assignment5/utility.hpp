@@ -107,4 +107,6 @@ void QuickSort(vector<Type> & v, int beg, int end) {
     }
 }
 
+vector<int> NaiveMaxSubVector(vector<int> & v);
+
 #endif /* utility_hpp */
