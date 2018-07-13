@@ -10,10 +10,12 @@
 
 vector<int> NaiveMaxSubVector(vector<int> & v) {
     int maxSum = 0;
+    int newSum = 0;
     vector<int> bestSubVec = {};
+    vector<int> newSubVec = {};
     for (int i = 0; i < v.size(); ++i) {
-        int newSum = v[i];
-        vector<int> newSubVec;
+        newSum = v[i];
+        newSubVec = {};
         newSubVec.push_back(v[i]);
         for (int j = i + 1; j < v.size(); ++j) {
             newSum += v[j];
@@ -23,6 +25,10 @@ vector<int> NaiveMaxSubVector(vector<int> & v) {
                 bestSubVec = newSubVec;
             }
         }
+    }
+    if (newSum > maxSum) {
+        maxSum = newSum;
+        bestSubVec = newSubVec;
     }
     return bestSubVec;
 }
