@@ -27,12 +27,20 @@ vector<int> NaiveMaxSubVector(vector<int> & v) {
     return bestSubVec;
 }
 
+int SumVec(vector<int> & v, int beg, int end) {
+    int sum = 0;
+    for (int i = beg; i < end; ++i) {
+        sum += v[i];
+    }
+    return sum;
+}
+
 vector<int> BestSubVec(vector<int> & v, int & left_beg, int & left_end,
                        int & right_beg, int & right_end) {
-    vector<int> indices = {}
-    int leftSum = sumVec(v, left_beg, left_end);
-    int rightSum = sumVec(v, right_beg, right_end);
-    int joinedSum = sumVec(v, left_beg, right_end);
+    vector<int> indices = {};
+    int leftSum = SumVec(v, left_beg, left_end);
+    int rightSum = SumVec(v, right_beg, right_end);
+    int joinedSum = SumVec(v, left_beg, right_end);
     int max = leftSum;
     indices[0] = left_beg;
     indices[1] = left_end;
@@ -61,8 +69,8 @@ void SmartMaxSubVector(vector<int> & v, int & beg, int & end) {
         
         SmartMaxSubVector(left, left_beg, left_end);
         SmartMaxSubVector(right, right_beg, right_end);
-        vector<int> result = BestSubVec(v, left_beg, left_end, right_beg, right_end);
-        beg = result[0];
-        end = result[1];
+        vector<int> indices = BestSubVec(v, left_beg, left_end, right_beg, right_end);
+        beg = indices[0];
+        end = indices[1];
     }
 }
