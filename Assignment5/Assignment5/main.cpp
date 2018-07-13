@@ -19,9 +19,10 @@ int main() {
 //    PrintVec(v);
     
     // Use the quicksort algorithm to sort a vector.
-//    srand((int)time(0));
-//    cout << rand() % 10 << endl;
-    QuickSort(v, 0, v.size()-1);
-    PrintVec(v);
+    vector<int> v2 = {7,2,1,5,8,9};
+//    QuickSort(v, 0, v.size()-1);
+//    PrintVec(v);
+    PivotSort(v2, 3);
+    PrintVec(v2);
     return 0;
 }

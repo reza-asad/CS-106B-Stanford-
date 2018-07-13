@@ -70,26 +70,24 @@ template <typename Type>
 unsigned long PivotSort(vector<Type> & v, unsigned long pivot) {
     unsigned long beg = 0;
     unsigned long end = v.size() - 1;
+    swap(v, 0, pivot);
     while (beg < end) {
-        if ((v[beg] > v[pivot]) and (v[end] < v[pivot])) {
-            swap(v, beg, end);
-            beg++;
-            end--;
-        } else if (v[beg] > v[pivot]) {
-            if (end == pivot) {
+        if (beg == pivot) {
+            if (v[end] < v[pivot]) {
+                swap(v, end, pivot);
+                pivot = end;
+                beg++;
+            } else {
+                end--;
+            }
+        } else if (end == pivot) {
+            if (v[beg] > v[pivot]) {
                 swap(v, beg, pivot);
                 pivot = beg;
+                end--;
+            } else {
+                beg++;
             }
-            end--;
-        } else if (v[end] < v[pivot]) {
-            if (beg == pivot) {
-                swap(v, pivot, end);
-                pivot = end;
-            }
-            beg++;
-        } else {
-            beg++;
-            end--;
         }
     }
     return pivot;
@@ -98,6 +96,7 @@ unsigned long PivotSort(vector<Type> & v, unsigned long pivot) {
 template <typename Type>
 void QuickSort(vector<Type> & v, unsigned long beg, unsigned long end) {
     if (end > beg) {
+        srand((int) time(0));
         unsigned long pivot = (rand() % (end+1-beg)) + beg;
         pivot = PivotSort(v, pivot);
         QuickSort(v, beg, pivot-1);
