@@ -29,7 +29,7 @@ vector<int> NaiveMaxSubVector(vector<int> & v) {
 
 int SumVec(vector<int> & v, int beg, int end) {
     int sum = 0;
-    for (int i = beg; i < end; ++i) {
+    for (int i = beg; i <= end; ++i) {
         sum += v[i];
     }
     return sum;
@@ -37,24 +37,24 @@ int SumVec(vector<int> & v, int beg, int end) {
 
 vector<int> BestSubVec(vector<int> & v, int & left_beg, int & left_end,
                        int & right_beg, int & right_end) {
-    vector<int> indices = {};
+    vector<int> indices;
     int leftSum = SumVec(v, left_beg, left_end);
     int rightSum = SumVec(v, right_beg, right_end);
     int joinedSum = SumVec(v, left_beg, right_end);
     int max = leftSum;
-    indices[0] = left_beg;
-    indices[1] = left_end;
+    indices.push_back(left_beg);
+    indices.push_back(left_end);
     if (rightSum > max) {
         max = rightSum;
-        indices[0] = right_beg;
-        indices[1] = right_end;
+        indices.push_back(right_beg);
+        indices.push_back(right_end);
     }
     if (joinedSum > max) {
         max = joinedSum;
-        indices[0] = left_beg;
-        indices[1] = right_end;
+        indices.push_back(left_beg);
+        indices.push_back(right_end);
     }
-    return indices;
+    return {indices[indices.size() - 2], indices[indices.size() - 1]};
 }
 
 void SmartMaxSubVector(vector<int> & v, int & beg, int & end) {
@@ -63,13 +63,15 @@ void SmartMaxSubVector(vector<int> & v, int & beg, int & end) {
         vector<int> left(v.begin(), v.begin() + mid);
         vector<int> right(v.begin() + mid, v.end());
         int left_beg = 0;
-        int left_end = mid;
-        int right_beg = mid;
-        int right_end = (int) v.size();
+        int right_beg = 0;
+        int left_end = mid - 1;
+        int right_end = (int) v.size() - 1 - mid ;
         
         SmartMaxSubVector(left, left_beg, left_end);
         SmartMaxSubVector(right, right_beg, right_end);
-        vector<int> indices = BestSubVec(v, left_beg, left_end, right_beg, right_end);
+        right_beg += mid;
+        right_end += mid;
+        vector<int> indices = BestSubVec(v, left_beg, left_end, right_beg , right_end);
         beg = indices[0];
         end = indices[1];
     }
