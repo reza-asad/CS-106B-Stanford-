@@ -115,6 +115,15 @@ void QuickSort(vector<Type> & v, int beg, int end) {
 //      The subvector with maximum sum.
 vector<int> NaiveMaxSubVector(vector<int> & v);
 
+// This finds the beginning and end index to the subvector
+// with maximum sum.
+//
+// input:
+//      vector<int> & v: The input vector.
+//      int & beg: The beginning index of the vector.
+//      int & end: The end index of the vector.
 void SmartMaxSubVector(vector<int> & v, int & beg, int & end);
+
+void SmartestMaxSubVector(vector<int> & v, int & beg, int & end);
 
 #endif /* utility_hpp */

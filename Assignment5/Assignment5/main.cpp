@@ -36,5 +36,8 @@ int main() {
     SmartMaxSubVector(v4, beg, end);
     cout << "The start is: " << beg << " The end is: " << end << endl;
 
+    // Using dynamic programming find the subvector with max sum
+    SmartestMaxSubVector(v4, beg, end);
+    
     return 0;
 }

@@ -82,3 +82,29 @@ void SmartMaxSubVector(vector<int> & v, int & beg, int & end) {
         end = indices[1];
     }
 }
+
+void SmartestMaxSubVector(vector<int> & v, int & beg, int & end) {
+    int maxSum = 0;
+    if (v.size() > 0) {
+        int tempSum = v[0];
+        maxSum = v[0];
+        for (int i = 1; i < v.size(); ++i) {
+            if (v[i] > (tempSum + v[i])) {
+                tempSum = v[i];
+                if (maxSum < tempSum) {
+                    maxSum = tempSum;
+                }
+            } else if ((tempSum + v[i]) >= tempSum) {
+                tempSum += v[i];
+                if (maxSum < tempSum) {
+                    maxSum = tempSum;
+                }
+            } else {
+                tempSum += v[i];
+            }
+        }
+    }
+    cout << maxSum << endl;
+}
+
+
