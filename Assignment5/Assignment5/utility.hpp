@@ -67,7 +67,7 @@ void swap(vector<Type> & v, unsigned long i, unsigned long j) {
 }
 
 template <typename Type>
-int PivotSort(vector<Type> & v, int beg, int end) {
+int PivotSort(vector<Type> & v, int beg, int end, int (cmp) (Type, Type)) {
     srand((int)time(NULL));
     int pivot = (rand() % (end+1-beg)) + beg;
     
@@ -78,7 +78,7 @@ int PivotSort(vector<Type> & v, int beg, int end) {
     // Swap with respect to the pivot untill begin index exceeds the end.
     while (beg < end) {
         if (beg == pivot) {
-            if (v[end] < v[pivot]) {
+            if (cmp(v[end], v[pivot]) < 0) {
                 swap(v, end, pivot);
                 pivot = end;
                 beg++;
@@ -86,7 +86,7 @@ int PivotSort(vector<Type> & v, int beg, int end) {
                 end--;
             }
         } else if (end == pivot) {
-            if (v[beg] > v[pivot]) {
+            if (cmp(v[pivot], v[beg]) < 0) {
                 swap(v, beg, pivot);
                 pivot = beg;
                 end--;
@@ -99,11 +99,18 @@ int PivotSort(vector<Type> & v, int beg, int end) {
 }
 
 template <typename Type>
-void QuickSort(vector<Type> & v, int beg, int end) {
+int DefaultComp(Type a, Type b) {
+    if (a < b) return -1;
+    if (a > b) return 1;
+    else return 0;
+}
+
+template <typename Type>
+void QuickSort(vector<Type> & v, int beg, int end, int (cmp) (Type, Type) = DefaultComp) {
     if (beg < end) {
-        int pivot = PivotSort(v, beg, end);
-        QuickSort(v, beg, pivot-1);
-        QuickSort(v, pivot+1, end);
+        int pivot = PivotSort(v, beg, end, cmp);
+        QuickSort(v, beg, pivot-1, cmp);
+        QuickSort(v, pivot+1, end, cmp);
     }
 }
 

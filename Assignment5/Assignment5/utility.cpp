@@ -93,18 +93,21 @@ void SmartestMaxSubVector(vector<int> & v, int & beg, int & end) {
                 tempSum = v[i];
                 if (maxSum < tempSum) {
                     maxSum = tempSum;
+                    beg = i;
+                    end = i;
                 }
             } else if ((tempSum + v[i]) >= tempSum) {
                 tempSum += v[i];
                 if (maxSum < tempSum) {
                     maxSum = tempSum;
+                    end = i;
                 }
             } else {
                 tempSum += v[i];
             }
         }
     }
-    cout << maxSum << endl;
+    cout << "The maximum sum is: " << maxSum << endl;
 }
 
 
