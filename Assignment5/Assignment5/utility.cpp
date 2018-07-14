@@ -44,23 +44,31 @@ int SumVec(vector<int> & v, int beg, int end) {
 vector<int> BestSubVec(vector<int> & v, int & left_beg, int & left_end,
                        int & right_beg, int & right_end) {
     vector<int> indices;
-    int leftSum = SumVec(v, left_beg, left_end);
-    int rightSum = SumVec(v, right_beg, right_end);
-    int joinedSum = SumVec(v, left_beg, right_end);
-    int max = leftSum;
-    indices.push_back(left_beg);
-    indices.push_back(left_end);
-    if (rightSum > max) {
-        max = rightSum;
-        indices.push_back(right_beg);
-        indices.push_back(right_end);
+    int beg = left_beg;
+    int end = right_end;
+    int maxSum = v[left_beg];
+    int leftSum = v[left_beg];
+    int rightSum = v[right_end];
+    int l = beg+1;
+    int r = end-1;
+    while ((l <= right_end) and (r >= left_beg)) {
+        leftSum += v[l];
+        rightSum += v[r];
+        if (leftSum > maxSum) {
+            maxSum = leftSum;
+            beg = left_beg;
+            end = l;
+        } else if (rightSum > maxSum) {
+            maxSum = rightSum;
+            beg = r;
+            end = right_end;
+        }
+        l++;
+        r--;
     }
-    if (joinedSum > max) {
-        max = joinedSum;
-        indices.push_back(left_beg);
-        indices.push_back(right_end);
-    }
-    return {indices[indices.size() - 2], indices[indices.size() - 1]};
+    indices.push_back(beg);
+    indices.push_back(end);
+    return indices;
 }
 
 void SmartMaxSubVector(vector<int> & v, int & beg, int & end) {
