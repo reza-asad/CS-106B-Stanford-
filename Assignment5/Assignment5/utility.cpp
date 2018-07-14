@@ -64,19 +64,15 @@ vector<int> BestSubVec(vector<int> & v, int & left_beg, int & left_end,
 }
 
 void SmartMaxSubVector(vector<int> & v, int & beg, int & end) {
-    if (v.size() > 1) {
-        int mid = (int) (v.size() / 2);
-        vector<int> left(v.begin(), v.begin() + mid);
-        vector<int> right(v.begin() + mid, v.end());
-        int left_beg = 0;
-        int right_beg = 0;
-        int left_end = mid - 1;
-        int right_end = (int) v.size() - 1 - mid ;
+    if (beg < end) {
+        int mid = beg + (end - beg) / 2;
+        int left_beg = beg;
+        int left_end = mid;
+        int right_beg = mid + 1;
+        int right_end = end;
+        SmartMaxSubVector(v, left_beg, left_end);
+        SmartMaxSubVector(v, right_beg, right_end);
         
-        SmartMaxSubVector(left, left_beg, left_end);
-        SmartMaxSubVector(right, right_beg, right_end);
-        right_beg += mid;
-        right_end += mid;
         vector<int> indices = BestSubVec(v, left_beg, left_end, right_beg , right_end);
         beg = indices[0];
         end = indices[1];

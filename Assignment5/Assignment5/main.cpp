@@ -32,7 +32,7 @@ int main() {
     // Using divide and conquer to find the subvector with max sum
     vector<int> v4 = {100, 4, 5, 10, -3, 10, -100, 1000};
     int beg = 0;
-    end = (int) v4.size();
+    end = (int) (v4.size() - 1);
     SmartMaxSubVector(v4, beg, end);
     cout << "The start is: " << beg << " The end is: " << end << endl;
 
