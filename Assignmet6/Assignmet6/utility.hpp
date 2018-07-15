@@ -61,9 +61,9 @@ void SelectionSort(vector<Type> & v, int (comp)(Type, Type) = DefaultComp) {
         int minIdx = i;
         int minVal = v[i];
         for (int j = i + 1; j < v.size(); ++j) {
-            if (comp(v[i], minVal) < 0) {
-                minIdx = i;
-                minVal = v[i];
+            if (comp(v[j], minVal) < 0) {
+                minIdx = j;
+                minVal = v[j];
             }
         }
         swap(v, i, minIdx);
@@ -71,7 +71,7 @@ void SelectionSort(vector<Type> & v, int (comp)(Type, Type) = DefaultComp) {
 }
 
 template <typename Type>
-vector<Type> Removeuplicates(vector<Type> & v, int (comp)(Type, Type)) {
+vector<Type> Removeuplicates(vector<Type> & v, int (comp)(Type, Type) = DefaultComp) {
     vector<Type> deduped;
     if (v.size() == 0) return deduped;
     // Sort the vector first
@@ -82,6 +82,7 @@ vector<Type> Removeuplicates(vector<Type> & v, int (comp)(Type, Type)) {
             deduped.push_back(v[i]);
         }
     }
+    return deduped;
 }
 
 #endif /* utility_hpp */

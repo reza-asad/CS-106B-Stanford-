@@ -28,8 +28,13 @@ int main() {
         qMovies.push(m);
         cout << m << endl;
     }
-    
-    map<int, int> m;
-    m[1] = 1;
+
+    // Remove duplicates in a vector of characters.
+    vector<char> v = {'a', 'v', 'c', 'a', 'c', 'z', 'v'};
+    vector<char> result = Removeuplicates(v);
+    cout << "Printing the deduped vector: " << endl;
+    for (int i = 0; i < result.size(); i++) {
+        cout << result[i] << endl;
+    }
     return 0;
 }
