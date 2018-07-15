@@ -32,4 +32,5 @@ void FilterQueue(queue<Type> & q, bool (IsBad)(Type) ) {
         current++;
     }
 }
+
 #endif /* utility_hpp */
