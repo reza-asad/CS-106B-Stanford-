@@ -10,5 +10,10 @@
 #include "utility.hpp"
 
 int main() {
+    queue<int> q;
+    q.push(1);
+    q.push(2);
+    int a = q.front();
+    cout << a << endl;
     return 0;
 }

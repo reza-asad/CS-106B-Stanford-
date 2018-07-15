@@ -10,5 +10,18 @@
 #define utility_hpp
 
 #include <iostream>
+#include <queue>
 
+using namespace std;
+
+template <typename Type>
+void FilterQueue(queue<Type> & q, bool (IsBad)(Type) ) {
+    int current = 0;
+    while (current < q.size()) {
+        Type elem = q.front();
+        q.pop();
+        if (!IsBad(elem)) q.push(elem);
+        current++;
+    }
+}
 #endif /* utility_hpp */
