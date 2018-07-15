@@ -12,6 +12,7 @@
 #include <iostream>
 #include <queue>
 #include <fstream>
+#include <map>
 
 using namespace std;
 
@@ -30,7 +31,6 @@ void FilterQueue(queue<Type> & q, bool (IsBad)(Type &) ) {
         Type elem = q.front();
         q.pop();
         if (!IsBad(elem)) {
-//            cout << elem << endl;
             q.push(elem);
             count++;
         }
@@ -38,5 +38,24 @@ void FilterQueue(queue<Type> & q, bool (IsBad)(Type &) ) {
 }
 
 ostream & operator << (ostream & f, Movie & m);
+
+template <typename Type>
+void SelectionSort(vector<Type> & v) {
+    for (int i = 0; i < v.size(); ++i) {
+        int minIdx = i;
+        int minVal = v[i];
+        for (int j = i + 1; j < v.size(); ++j) {
+            if (v[i] < minVal) {
+                minIdx = i;
+                minVal = v[i];
+            }
+        }
+        swap(v, i, minIdx);
+    }
+}
+
+template <typename Type>
+vector<Type> Removeuplicates(vector<Type> & v) {
+}
 
 #endif /* utility_hpp */

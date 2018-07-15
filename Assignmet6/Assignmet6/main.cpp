@@ -28,5 +28,8 @@ int main() {
         qMovies.push(m);
         cout << m << endl;
     }
+    
+    map<int, int> m;
+    m[1] = 1;
     return 0;
 }
