@@ -14,6 +14,12 @@
 
 using namespace std;
 
+struct Movie {
+    string name;
+    int rating;
+    string genre;
+};
+
 template <typename Type>
 void FilterQueue(queue<Type> & q, bool (IsBad)(Type) ) {
     int current = 0;
