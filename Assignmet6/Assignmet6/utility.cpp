@@ -11,3 +11,8 @@
 bool IsBadMovie(Movie & m) {
     return (m.genre == "Drama" and m.rating < 7);
 }
+
+ostream & operator << (ostream & f, Movie & m) {
+    f << "Name: " << m.name << " Rating: " << m.rating << " Genre: " << m.genre;
+    return f;
+}
