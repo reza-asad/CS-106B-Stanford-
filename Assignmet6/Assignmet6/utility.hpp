@@ -40,6 +40,15 @@ void FilterQueue(queue<Type> & q, bool (IsBad)(Type &) ) {
 ostream & operator << (ostream & f, Movie & m);
 
 template <typename Type>
+void swap(vector<Type> & v, int i, int j) {
+    if (i != j) {
+        Type temp = v[j];
+        v[j] = v[i];
+        v[i] = temp;
+    }
+}
+
+template <typename Type>
 void SelectionSort(vector<Type> & v) {
     for (int i = 0; i < v.size(); ++i) {
         int minIdx = i;
