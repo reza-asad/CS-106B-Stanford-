@@ -20,6 +20,8 @@ struct Movie {
     string genre;
 };
 
+bool IsBadMovie(Movie & m);
+
 template <typename Type>
 void FilterQueue(queue<Type> & q, bool (IsBad)(Type) ) {
     int current = 0;

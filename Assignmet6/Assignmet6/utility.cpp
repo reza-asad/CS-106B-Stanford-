@@ -7,3 +7,7 @@
 //
 
 #include "utility.hpp"
+
+bool IsBadMovie(Movie & m) {
+    return (m.genre == "Drama" and m.rating < 7);
+}
