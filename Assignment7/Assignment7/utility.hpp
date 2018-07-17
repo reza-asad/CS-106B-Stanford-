@@ -77,4 +77,15 @@ void MyStack<Type>::Reverse() {
     }
 }
 
+template <typename Type>
+struct Node {
+    Type value;
+    Node * next;
+};
+
+template <typename Type>
+void Sutter(Node * list) {
+    
+}
+
 #endif /* utility_hpp */

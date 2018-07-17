@@ -15,6 +15,7 @@ int main() {
     s.push(2);
     s.push(3);
     s.Reverse();
+    
     cout << s.pop() << endl;
     cout << s.pop() << endl;
     cout << s.pop() << endl;
