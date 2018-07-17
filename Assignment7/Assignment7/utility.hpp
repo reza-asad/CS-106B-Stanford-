@@ -30,6 +30,29 @@ private:
     
 };
 
-#include "utility.cpp"
+template <typename Type>
+MyStack<Type>::MyStack() {
+}
+
+template <typename Type>
+MyStack<Type>::~MyStack() {
+}
+
+template <typename Type>
+void MyStack<Type>::push(Type e) {
+    elems.push_back(e);
+}
+
+template <typename Type>
+Type MyStack<Type>::pop() {
+    Type top = elems[elems.size()-1];
+    elems.pop_back();
+    return top;
+}
+
+template <typename Type>
+bool MyStack<Type>::IsEmpty() {
+    return elems.size() == 0;
+}
 
 #endif /* utility_hpp */

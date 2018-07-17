@@ -8,15 +8,3 @@
 
 #include "utility.hpp"
 
-template <typename Type>
-MyStack<Type> :: MyStack() {
-}
-
-template <typename Type>
-MyStack<Type> :: ~MyStack() {
-}
-
-template <typename Type>
-void MyStack<Type> :: push(Type e) {
-    elems.push_back(e);
-}
