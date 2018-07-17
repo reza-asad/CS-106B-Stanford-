@@ -25,6 +25,8 @@ public:
     
     bool IsEmpty();
     
+    void Reverse();
+    
 private:
     vector<Type> elems;
     
@@ -53,6 +55,26 @@ Type MyStack<Type>::pop() {
 template <typename Type>
 bool MyStack<Type>::IsEmpty() {
     return elems.size() == 0;
+}
+
+template <typename Type>
+void Swap(vector<Type> & v, int i, int j) {
+    Type temp = v[i];
+    v[i] = v[j];
+    v[j] = temp;
+}
+
+template <typename Type>
+void MyStack<Type>::Reverse() {
+    if (!(this->IsEmpty())) {
+        int front = 0;
+        int back = (int) (elems.size()-1);
+        while (front < back) {
+            Swap(elems, front, back);
+            front++;
+            back--;
+        }
+    }
 }
 
 #endif /* utility_hpp */
