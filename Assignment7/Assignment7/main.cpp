@@ -20,5 +20,7 @@ int main() {
     cout << s.pop() << endl;
     cout << s.pop() << endl;
     
+    // Create a list
+    
     return 0;
 }

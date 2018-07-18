@@ -84,8 +84,14 @@ struct Node {
 };
 
 template <typename Type>
-void Sutter(Node * list) {
-    
+void Sutter(Node<Type> * list) {
+    while (list != NULL) {
+        Node<Type> * temp;
+        temp -> value = list -> value;
+        temp -> next = list -> next;
+        list -> next = temp;
+        list = temp -> next;
+    }
 }
 
 #endif /* utility_hpp */
