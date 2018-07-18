@@ -21,9 +21,12 @@ int main() {
     cout << s.pop() << endl;
     
     // Create a list
-    vector<int> v = {1,6, 3,8};
+    vector<int> v = {1,7,9,0,3,1,1};
     Node<int> * list = CreateList(v);
     cout << "Printing the list: " << endl;
+    PrintList(list);
+    Sutter(list);
+    cout << "After suttering the list is: " << endl;
     PrintList(list);
     return 0;
 }

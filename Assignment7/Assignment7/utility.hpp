@@ -85,12 +85,13 @@ struct Node {
 
 template <typename Type>
 void Sutter(Node<Type> * & list) {
-    while (list != NULL) {
+    Node<Type> * itr = list;
+    while (itr != NULL) {
         Node<Type> * temp = new Node<Type>;
-        temp -> value = list -> value;
-        temp -> next = list -> next;
-        list -> next = temp;
-        list = temp -> next;
+        temp -> value = itr -> value;
+        temp -> next = itr -> next;
+        itr -> next = temp;
+        itr = temp -> next;
     }
 }
 
