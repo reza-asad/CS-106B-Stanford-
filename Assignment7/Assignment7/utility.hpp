@@ -84,7 +84,7 @@ struct Node {
 };
 
 template <typename Type>
-void Sutter(Node<Type> * & list) {
+void Stutter(Node<Type> * & list) {
     Node<Type> * itr = list;
     while (itr != NULL) {
         Node<Type> * temp = new Node<Type>;
@@ -109,6 +109,28 @@ void PrintList(Node<Type> * & list) {
     if (list != NULL) {
         cout << list -> value << endl;
         PrintList(list -> next);
+    }
+}
+
+template <typename Type>
+void Unstutter(Node<Type> * & list) {
+    Node<Type> * back;
+    Node<Type> * front;
+    back = list;
+    if (list != NULL) {
+        front = back -> next;
+        while( front != NULL) {
+            if (front -> value == back -> value) {
+                Node<Type> * temp = new Node<Type>;
+                temp = front;
+                front = front -> next;
+                delete temp;
+                back -> next = front;
+            } else {
+                back = back -> next;
+                front = front -> next;
+            }
+        }
     }
 }
 

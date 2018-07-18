@@ -25,8 +25,11 @@ int main() {
     Node<int> * list = CreateList(v);
     cout << "Printing the list: " << endl;
     PrintList(list);
-    Sutter(list);
+    
+    // Stutter the list
+    Stutter(list);
     cout << "After suttering the list is: " << endl;
     PrintList(list);
+    
     return 0;
 }
