@@ -96,17 +96,11 @@ void Sutter(Node<Type> * & list) {
 }
 
 template <typename Type>
-Node<Type> * CreateList(vector<Type> & v) {
-    // important to initialize the list to NULL.
+Node<Type> * CreateList(vector<Type> & v, int i=0) {
+    if (v.size() == i) return NULL;
     Node<Type> * list = new Node<Type>;
-    list = NULL;
-    // Insert at the beginning.
-    for (int i = 0; i < v.size(); ++i) {
-        Node<Type> * temp = new Node<Type>;
-        temp -> value = v[i];
-        temp -> next  = list;
-        list = temp;
-    }
+    list -> value = v[i];
+    list -> next = CreateList(v, i+1);
     return list;
 }
 
