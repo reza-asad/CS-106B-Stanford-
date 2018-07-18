@@ -84,9 +84,9 @@ struct Node {
 };
 
 template <typename Type>
-void Sutter(Node<Type> * list) {
+void Sutter(Node<Type> * & list) {
     while (list != NULL) {
-        Node<Type> * temp;
+        Node<Type> * temp = new Node<Type>;
         temp -> value = list -> value;
         temp -> next = list -> next;
         list -> next = temp;
@@ -95,16 +95,26 @@ void Sutter(Node<Type> * list) {
 }
 
 template <typename Type>
-Node<Type> CreateList(vector<Type> & v) {
-    Node<Type> * list;
+Node<Type> * CreateList(vector<Type> & v) {
+    // important to initialize the list to NULL.
+    Node<Type> * list = new Node<Type>;
+    list = NULL;
     // Insert at the beginning.
     for (int i = 0; i < v.size(); ++i) {
-        Node<Type> * temp;
+        Node<Type> * temp = new Node<Type>;
         temp -> value = v[i];
         temp -> next  = list;
         list = temp;
     }
     return list;
+}
+
+template <typename Type>
+void PrintList(Node<Type> * & list) {
+    if (list != NULL) {
+        cout << list -> value << endl;
+        PrintList(list -> next);
+    }
 }
 
 #endif /* utility_hpp */

@@ -21,6 +21,9 @@ int main() {
     cout << s.pop() << endl;
     
     // Create a list
-    
+    vector<int> v = {1,6, 3,8};
+    Node<int> * list = CreateList(v);
+    cout << "Printing the list: " << endl;
+    PrintList(list);
     return 0;
 }
