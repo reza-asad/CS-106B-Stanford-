@@ -94,4 +94,17 @@ void Sutter(Node<Type> * list) {
     }
 }
 
+template <typename Type>
+Node<Type> CreateList(vector<Type> & v) {
+    Node<Type> * list;
+    // Insert at the beginning.
+    for (int i = 0; i < v.size(); ++i) {
+        Node<Type> * temp;
+        temp -> value = v[i];
+        temp -> next  = list;
+        list = temp;
+    }
+    return list;
+}
+
 #endif /* utility_hpp */
