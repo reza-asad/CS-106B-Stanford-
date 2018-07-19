@@ -11,6 +11,11 @@
 
 int main() {
     // Test if two trees are the same
-    nodeT * t1;
+    vector<string> v1 = {"b", "d", "a", "g"};
+    vector<string> v2 = {"b", "d", "a", "c"};
+    nodeT * t1 = BuildBST(v1);
+    nodeT * t2 = BuildBST(v2);
+    cout << "The two trees are equal: " << IsTreeEqual(t1, t2) << endl;
+    
     return 0;
 }
