@@ -8,9 +8,16 @@
 
 #include "utility.hpp"
 
-//void InsertInBST(nodeT * & t, string key) {
-//
-//}
+void InsertInBST(nodeT * & t, string key) {
+    if (t == NULL) {
+        t = new nodeT;
+        t -> key = key;
+        t -> left = NULL;
+        t -> right = NULL;
+    }
+    else if (key < t -> key) InsertInBST(t -> left, key);
+    else InsertInBST(t -> right, key);
+}
 
 nodeT * BuildBST(vector<string> & v) {
     nodeT * t = new nodeT;
