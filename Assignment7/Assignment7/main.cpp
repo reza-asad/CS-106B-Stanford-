@@ -21,7 +21,7 @@ int main() {
     cout << s.pop() << endl;
     
     // Create a list
-    vector<int> v = {1,7,9,0,3,1,1};
+    vector<int> v = {1,7,9,0,3,1,1,1};
     Node<int> * list = CreateList(v);
     cout << "Printing the list: " << endl;
     PrintList(list);
@@ -29,6 +29,11 @@ int main() {
     // Stutter the list
     Stutter(list);
     cout << "After suttering the list is: " << endl;
+    PrintList(list);
+    
+    // Unstutter the list
+    Unstutter(list);
+    cout << "Printing the list after unstuttering: " << endl;
     PrintList(list);
     
     return 0;

@@ -114,15 +114,13 @@ void PrintList(Node<Type> * & list) {
 
 template <typename Type>
 void Unstutter(Node<Type> * & list) {
-    Node<Type> * back;
-    Node<Type> * front;
+    Node<Type> * back, * front;
     back = list;
     if (list != NULL) {
         front = back -> next;
         while( front != NULL) {
             if (front -> value == back -> value) {
-                Node<Type> * temp = new Node<Type>;
-                temp = front;
+                Node<Type> * temp = front;
                 front = front -> next;
                 delete temp;
                 back -> next = front;
