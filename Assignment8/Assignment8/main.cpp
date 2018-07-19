@@ -10,5 +10,7 @@
 #include "utility.hpp"
 
 int main() {
+    // Test if two trees are the same
+    nodeT * t1;
     return 0;
 }
