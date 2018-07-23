@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include <vector>
+#include <cmath>
 
 using namespace std;
 
@@ -32,5 +33,10 @@ bool IsTreeEqual(nodeT * t1, nodeT * t2);
 
 // Question 4.
 void TrimLeaves(nodeT * & t);
+
+// Question 5
+int TreeHeight(nodeT * t);
+
+bool IsBalanced(nodeT * t);
 
 #endif /* utility_hpp */

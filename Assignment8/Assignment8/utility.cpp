@@ -56,4 +56,14 @@ void TrimLeaves(nodeT * & t) {
     }
 }
 
+bool IsBalanced(nodeT * t) {
+    if (t != NULL) {
+        int leftHeight = TreeHeight(t -> left);
+        int rightHeight = TreeHeight(t -> right);
+        if (abs(leftHeight - rightHeight) > 1) return false;
+        return (IsBalanced(t -> left) and IsBalanced(t -> right));
+    } else {
+        return true;
+    }
+}
 
