@@ -20,6 +20,8 @@ struct nodeT {
     nodeT * right;
 };
 
+void InOrderPrint(nodeT * t);
+
 void InsertInBST(nodeT * & t, string key);
 
 nodeT * BuildBST(vector<string> & v);
@@ -27,5 +29,8 @@ nodeT * BuildBST(vector<string> & v);
 // Question 3.
 // Check if two trees are equal.
 bool IsTreeEqual(nodeT * t1, nodeT * t2);
+
+// Question 4.
+void TrimLeaves(nodeT * & t);
 
 #endif /* utility_hpp */

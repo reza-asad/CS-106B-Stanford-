@@ -8,6 +8,14 @@
 
 #include "utility.hpp"
 
+void InOrderPrint(nodeT * t) {
+    if (t != NULL) {
+        InOrderPrint(t -> left);
+        cout << t -> key << endl;
+        InOrderPrint(t -> right);
+    }
+}
+
 void InsertInBST(nodeT * & t, string key) {
     if (t == NULL) {
         t = new nodeT;
@@ -35,3 +43,17 @@ bool IsTreeEqual(nodeT * t1, nodeT * t2) {
             IsTreeEqual(t1 -> left, t2 -> left) and
             IsTreeEqual(t1 -> right, t2 -> right));
 }
+
+void TrimLeaves(nodeT * & t) {
+    if (t != NULL) {
+        if (t -> left == NULL and t -> right == NULL) {
+            delete t;
+            t = NULL;
+        } else {
+            TrimLeaves(t -> left);
+            TrimLeaves(t -> right);
+        }
+    }
+}
+
+
