@@ -20,5 +20,6 @@ int main() {
     // Trim leaves of a tree
     TrimLeaves(t1);
     InOrderPrint(t1);
+    
     return 0;
 }
