@@ -12,7 +12,7 @@
 int main() {
     // Test if two trees are the same
     vector<string> v1 = {"h", "e", "q", "a", "f", "p", "q"};
-    vector<string> v2 = {"b", "d", "a", "c"};
+    vector<string> v2 = {"b", "d", "a", "g", "h", "c","a"};
     nodeT * t1 = BuildBST(v1);
     nodeT * t2 = BuildBST(v2);
     cout << "The two trees are equal: " << IsTreeEqual(t1, t2) << endl;
@@ -20,6 +20,11 @@ int main() {
     // Trim leaves of a tree
     TrimLeaves(t1);
     InOrderPrint(t1);
+    
+    // Check if a tree is balanced
+    bool b = IsBalanced(t2);
+    cout << "Is the tree balanced: " << b << endl;
+    InOrderPrint(t2);
     
     return 0;
 }
