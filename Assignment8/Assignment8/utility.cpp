@@ -81,6 +81,22 @@ void RemoveQueen(vector<vector<bool>> & v, int row, int column) {
 }
 
 bool CanAddQueen(vector<vector<bool>> & v, int row, int column) {
+    // check for vertical collision
+    for (int i = 0; i < row; ++i) {
+        if (v[i][column] == 1) return false;
+    }
+    // check for diagonal collision
+    int j = 1;
+    bool upLeft = ((row-j) > 0) and ((column-j) > 0);
+    bool upRight = ((row-j) > 0) and ((column+j) > 0);
+    while(upLeft or upRight ) {
+        if (upLeft and (v[row-j][column-j] == 1)) return false;
+        else if (upRight and (v[row-1][column+j] == 1)) return false;
+        j++;
+        upLeft = ((row-j) > 0) and ((column-j) > 0);
+        upRight = ((row-j) > 0) and ((column+j) > 0);
+    }
+    return true;
 }
 
 bool PlaceQueens(vector<vector<bool>> & v, int row) {
