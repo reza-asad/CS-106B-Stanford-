@@ -26,5 +26,10 @@ int main() {
     cout << "Is the tree balanced: " << b << endl;
     InOrderPrint(t2);
     
+    // Create a chess board;
+    const int dim = 8;
+    vector<vector<bool>> board;
+    CreateBoard(board, dim);
+    
     return 0;
 }

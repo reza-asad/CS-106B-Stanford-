@@ -72,6 +72,14 @@ bool IsBalanced(nodeT * t) {
     }
 }
 
+void CreateBoard(vector<vector<bool>> & board, int dim) {
+    for (int row = 0; row < dim; ++row) {
+        for (int column = 0; column < dim; column++) {
+            board[row][column] = 0;
+        }
+    }
+}
+
 void AddQueen(vector<vector<bool>> & v, int row, int column) {
     v[row][column] = 1;
 }
