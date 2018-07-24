@@ -28,8 +28,10 @@ int main() {
     
     // Create a chess board;
     const int dim = 8;
-    vector<vector<bool>> board;
+    vector<vector<bool>> board(dim);
     CreateBoard(board, dim);
+    
+    
     
     return 0;
 }
