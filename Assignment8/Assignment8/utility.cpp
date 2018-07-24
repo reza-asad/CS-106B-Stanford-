@@ -76,6 +76,10 @@ void AddQueen(vector<vector<bool>> & v, int row, int column) {
     v[row][column] = 1;
 }
 
+void RemoveQueen(vector<vector<bool>> & v, int row, int column) {
+    v[row][column] = 0;
+}
+
 bool CanAddQueen(vector<vector<bool>> & v, int row, int column) {
 }
 

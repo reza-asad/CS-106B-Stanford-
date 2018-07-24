@@ -43,6 +43,7 @@ bool IsBalanced(nodeT * t);
 // in such a way that they all survive.
 bool CanAddQueen(vector<vector<bool>> & v, int row, int column);
 void AddQueen(vector<vector<bool>> & v, int row, int column);
+void RemoveQueen(vector<vector<bool>> & v, int row, int column);
 bool PlaceQueens(vector<vector<bool>> & v, int row = 0);
 
 #endif /* utility_hpp */
