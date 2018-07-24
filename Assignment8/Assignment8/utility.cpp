@@ -72,3 +72,12 @@ bool IsBalanced(nodeT * t) {
     }
 }
 
+bool PlaceQueens(vector<vector<bool>> & v, int row) {
+    if (row == v.size()) return true;
+    for (int column = 0; column < v[row].size(); ++column) {
+        if (CanAddQueen(v, row, column)) AddQueen(v, row, column);
+        if (PlaceQueens(v, row+1)) return true;
+        else RemoveQueen(v, row, column);
+    }
+    return false;
+}

@@ -39,4 +39,8 @@ int TreeHeight(nodeT * t);
 
 bool IsBalanced(nodeT * t);
 
+// Placing one queen in every row and column of chess board
+// in such a way that they all survive.
+bool PlaceQueens(vector<vector<bool>> & v, int row = 0);
+
 #endif /* utility_hpp */
