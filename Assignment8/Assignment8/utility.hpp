@@ -42,6 +42,7 @@ bool IsBalanced(nodeT * t);
 // Placing one queen in every row and column of chess board
 // in such a way that they all survive.
 void CreateBoard(vector<vector<bool>> & board, int dim);
+void PrintChessBoard(vector<vector<bool>> & board);
 bool CanAddQueen(vector<vector<bool>> & board, int row, int column);
 void AddQueen(vector<vector<bool>> & board, int row, int column);
 void RemoveQueen(vector<vector<bool>> & board, int row, int column);

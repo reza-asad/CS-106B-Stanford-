@@ -31,7 +31,11 @@ int main() {
     vector<vector<bool>> board(dim);
     CreateBoard(board, dim);
     
+    // Add queens on the board
+    bool queensPlaced = PlaceQueens(board);
+    cout << "Were the queesn placed: " << queensPlaced << endl;
     
+    PrintChessBoard(board);
     
     return 0;
 }

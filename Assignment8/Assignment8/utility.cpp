@@ -72,6 +72,15 @@ bool IsBalanced(nodeT * t) {
     }
 }
 
+void PrintChessBoard(vector<vector<bool>> & board) {
+    for (int row = 0; row < board.size(); ++row) {
+        for (int column = 0; column < board[0].size(); ++column) {
+            cout << board[row][column] << ", ";
+        }
+        cout << endl;
+    }
+}
+
 void CreateBoard(vector<vector<bool>> & board, int dim) {
     for (int row = 0; row < dim; ++row) {
         board[row].resize(dim, 0);
