@@ -89,6 +89,7 @@ void CreateBoard(vector<vector<bool>> & board, int dim) {
 
 void AddQueen(vector<vector<bool>> & v, int row, int column) {
     v[row][column] = 1;
+//    cout << "here" << endl;
 }
 
 void RemoveQueen(vector<vector<bool>> & v, int row, int column) {
@@ -102,14 +103,14 @@ bool CanAddQueen(vector<vector<bool>> & v, int row, int column) {
     }
     // check for diagonal collision
     int j = 1;
-    bool upLeft = ((row-j) > 0) and ((column-j) > 0);
-    bool upRight = ((row-j) > 0) and ((column+j) > 0);
-    while(upLeft or upRight ) {
+    bool upLeft = ((row-j) >= 0) and ((column-j) >= 0);
+    bool upRight = ((row-j) >= 0) and ((column+j) < v[0].size());
+    while(upLeft or upRight) {
         if (upLeft and (v[row-j][column-j] == 1)) return false;
         else if (upRight and (v[row-1][column+j] == 1)) return false;
         j++;
-        upLeft = ((row-j) > 0) and ((column-j) > 0);
-        upRight = ((row-j) > 0) and ((column+j) > 0);
+        upLeft = ((row-j) >= 0) and ((column-j) >= 0);
+        upRight = ((row-j) >= 0) and ((column+j) < v[0].size());
     }
     return true;
 }
@@ -117,9 +118,11 @@ bool CanAddQueen(vector<vector<bool>> & v, int row, int column) {
 bool PlaceQueens(vector<vector<bool>> & v, int row) {
     if (row == v.size()) return true;
     for (int column = 0; column < v[row].size(); ++column) {
-        if (CanAddQueen(v, row, column)) AddQueen(v, row, column);
-        if (PlaceQueens(v, row+1)) return true;
-        else RemoveQueen(v, row, column);
+        if (CanAddQueen(v, row, column)) {
+            AddQueen(v, row, column);
+            if (PlaceQueens(v, row+1)) return true;
+            else RemoveQueen(v, row, column);
+        }
     }
     return false;
 }
