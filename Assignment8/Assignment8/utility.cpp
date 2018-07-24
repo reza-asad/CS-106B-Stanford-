@@ -72,7 +72,7 @@ bool IsBalanced(nodeT * t) {
     }
 }
 
-bool AddQueen(vector<vector<bool>> & v, int row, int column) {
+void AddQueen(vector<vector<bool>> & v, int row, int column) {
     v[row][column] = 1;
 }
 
