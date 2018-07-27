@@ -12,6 +12,11 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
+#include <stack>
+#include <set>
+#include <map>
+#include <string.h>
+#include <sstream>
 
 using namespace std;
 
