@@ -11,7 +11,24 @@
 
 #include <iostream>
 #include <vector>
+#include <set>
+#include <map>
 
 using namespace std;
+
+struct arcT;
+struct nodeT {
+    string name;
+    set<arcT*> arcs;
+};
+struct arcT {
+    nodeT * start;
+    nodeT * end;
+};
+struct graphT {
+    set<nodeT *> nodes;
+};
+
+bool IsCyclicGraph(graphT & graph);
 
 #endif /* utility_hpp */
