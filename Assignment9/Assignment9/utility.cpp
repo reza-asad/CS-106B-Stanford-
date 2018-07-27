@@ -12,7 +12,7 @@ bool depthFirstSearch(nodeT * node, set<nodeT*> & visitedNodes) {
     for (set<arcT*>::iterator it = node->arcs.begin(); it != node->arcs.end(); ++it) {
         if (visitedNodes.find((*it)->end) != visitedNodes.end()) return true;
         visitedNodes.insert((*it)->end);
-        depthFirstSearch((*it)->end, visitedNodes);
+        if (depthFirstSearch((*it)->end, visitedNodes)) return true;
     }
     return false;
 }

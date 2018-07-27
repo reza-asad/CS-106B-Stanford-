@@ -32,6 +32,9 @@ int main() {
     arcT * arc4 = new arcT;
     arcT * arc5 = new arcT;
     
+    // Adding an arc to make the graph cyclic
+    arcT * cycleArc = new arcT;
+    
     arc1->start = node1;
     arc1->end = node2;
     arc2->start = node2;
@@ -43,24 +46,30 @@ int main() {
     arc5->start = node5;
     arc5->end = node6;
     
+    // Defining the cyclic arc
+    cycleArc->start = node4;
+    cycleArc->end = node6;
+    
     set<arcT*> arcs1 = {arc1};
     set<arcT*> arcs2 = {arc2};
     set<arcT*> arcs3 = {arc3};
-    set<arcT*> arcs4 = {arc4};
+    set<arcT*> arcs4 = {arc4, cycleArc};
     set<arcT*> arcs5 = {arc5};
     set<arcT*> arcs6 = {};
 
     node1->arcs = arcs1;
-    node1->arcs = arcs2;
-    node1->arcs = arcs3;
-    node1->arcs = arcs4;
-    node1->arcs = arcs5;
-    node1->arcs = arcs6;
+    node2->arcs = arcs2;
+    node3->arcs = arcs3;
+    node4->arcs = arcs4;
+    node5->arcs = arcs5;
+    node6->arcs = arcs6;
     
     set<nodeT*> nodes = {node1, node2, node3, node4, node5, node6};
-    graphT * graph = new graphT;
-    graph->nodes = nodes;
+    graphT graph;
+    graph.nodes = nodes;
     
-    
+    // check if a directed connected graph is cyclic
+    cout << "Is the graph cyclic: " << IsCyclicGraph(graph) << endl;
+//    IsCyclicGraph(graph);
     return 0;
 }
