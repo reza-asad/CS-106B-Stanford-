@@ -47,15 +47,15 @@ int main() {
     arc5->end = node6;
     
     // Defining the cyclic arc
-    cycleArc->start = node4;
-    cycleArc->end = node6;
+    cycleArc->start = node6;
+    cycleArc->end = node1;
     
     set<arcT*> arcs1 = {arc1};
     set<arcT*> arcs2 = {arc2};
     set<arcT*> arcs3 = {arc3};
-    set<arcT*> arcs4 = {arc4, cycleArc};
+    set<arcT*> arcs4 = {arc4};
     set<arcT*> arcs5 = {arc5};
-    set<arcT*> arcs6 = {};
+    set<arcT*> arcs6 = {cycleArc};
 
     node1->arcs = arcs1;
     node2->arcs = arcs2;

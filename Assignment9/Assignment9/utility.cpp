@@ -8,20 +8,22 @@
 
 #include "utility.hpp"
 
-bool depthFirstSearch(nodeT * node, set<nodeT*> & visitedNodes) {
+bool isCyclic(nodeT * node, set<nodeT*> & visitedNodes, nodeT * curr) {
     for (set<arcT*>::iterator it = node->arcs.begin(); it != node->arcs.end(); ++it) {
-        if (visitedNodes.find((*it)->end) != visitedNodes.end()) return true;
-        visitedNodes.insert((*it)->end);
-        if (depthFirstSearch((*it)->end, visitedNodes)) return true;
+        if (visitedNodes.find((*it)->end) == visitedNodes.end()) {
+            visitedNodes.insert((*it)->end);
+            isCyclic((*it)->end, visitedNodes, curr);
+        }
     }
+    if (visitedNodes.find(curr) != visitedNodes.end()) return true;
     return false;
 }
 
 bool IsCyclicGraph(graphT & graph) {
     for (set<nodeT*>::iterator it = graph.nodes.begin(); it != graph.nodes.end(); ++it) {
         set<nodeT*> visitedNodes = {};
-        visitedNodes.insert(*it);
-        if (depthFirstSearch((*it), visitedNodes)) return true;
+        nodeT * curr = (*it);
+        if (!isCyclic(curr, visitedNodes, curr)) return false;
     }
-    return false;
+    return true;
 }
